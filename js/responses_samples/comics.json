@@ -1,0 +1,743 @@
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2020 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2020 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2020 MARVEL</a>",
+    "etag": "ba0b2897e064ddea28b0b7cdfa4eb50fbe032091",
+    "data": {
+      "offset": 0,
+      "limit": 8,
+      "total": 47746,
+      "count": 8,
+      "results": [
+        {
+          "id": 9798,
+          "digitalId": 0,
+          "title": "Love Romances (1949) #100",
+          "issueNumber": 100,
+          "variantDescription": "",
+          "description": null,
+          "modified": "-0001-11-30T00:00:00-0500",
+          "isbn": "",
+          "upc": "",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 0,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/9798",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/9798/love_romances_1949_100?utm_campaign=apiRef&utm_source=ddf4636674238849e5422709e17c4863"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/2033",
+            "name": "Love Romances (1949 - 1963)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 0
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [],
+          "creators": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9798/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/1523",
+                "name": "Vince Colletta",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/196",
+                "name": "Jack Kirby",
+                "role": "penciller (cover)"
+              }
+            ],
+            "returned": 2
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9798/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9798/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/9892",
+                "name": "My Life, My Love",
+                "type": "cover"
+              }
+            ],
+            "returned": 1
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9798/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 9800,
+          "digitalId": 0,
+          "title": "Love Romances (1949) #102",
+          "issueNumber": 102,
+          "variantDescription": "",
+          "description": null,
+          "modified": "-0001-11-30T00:00:00-0500",
+          "isbn": "",
+          "upc": "",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 0,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/9800",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/9800/love_romances_1949_102?utm_campaign=apiRef&utm_source=ddf4636674238849e5422709e17c4863"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/2033",
+            "name": "Love Romances (1949 - 1963)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 0
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [],
+          "creators": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9800/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/196",
+                "name": "Jack Kirby",
+                "role": "penciller (cover)"
+              }
+            ],
+            "returned": 1
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9800/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9800/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/9894",
+                "name": "By Love Betrayed!",
+                "type": "cover"
+              }
+            ],
+            "returned": 1
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9800/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 9802,
+          "digitalId": 0,
+          "title": "Love Romances (1949) #104",
+          "issueNumber": 104,
+          "variantDescription": "",
+          "description": null,
+          "modified": "-0001-11-30T00:00:00-0500",
+          "isbn": "",
+          "upc": "",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 0,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/9802",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/9802/love_romances_1949_104?utm_campaign=apiRef&utm_source=ddf4636674238849e5422709e17c4863"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/2033",
+            "name": "Love Romances (1949 - 1963)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 0
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [],
+          "creators": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9802/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/1523",
+                "name": "Vince Colletta",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/196",
+                "name": "Jack Kirby",
+                "role": "penciller (cover)"
+              }
+            ],
+            "returned": 2
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9802/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9802/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/9896",
+                "name": "[none]",
+                "type": "cover"
+              }
+            ],
+            "returned": 1
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9802/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 9804,
+          "digitalId": 0,
+          "title": "Love Romances (1949) #106",
+          "issueNumber": 106,
+          "variantDescription": "",
+          "description": null,
+          "modified": "-0001-11-30T00:00:00-0500",
+          "isbn": "",
+          "upc": "",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 0,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/9804",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/9804/love_romances_1949_106?utm_campaign=apiRef&utm_source=ddf4636674238849e5422709e17c4863"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/2033",
+            "name": "Love Romances (1949 - 1963)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 0
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [],
+          "creators": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9804/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/263",
+                "name": "Dick Ayers",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/196",
+                "name": "Jack Kirby",
+                "role": "penciller (cover)"
+              }
+            ],
+            "returned": 2
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9804/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9804/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/9898",
+                "name": "My Sister...My Enemy!",
+                "type": "cover"
+              }
+            ],
+            "returned": 1
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9804/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 9803,
+          "digitalId": 0,
+          "title": "Love Romances (1949) #105",
+          "issueNumber": 105,
+          "variantDescription": "",
+          "description": null,
+          "modified": "-0001-11-30T00:00:00-0500",
+          "isbn": "",
+          "upc": "",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 0,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/9803",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/9803/love_romances_1949_105?utm_campaign=apiRef&utm_source=ddf4636674238849e5422709e17c4863"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/2033",
+            "name": "Love Romances (1949 - 1963)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 0
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [],
+          "creators": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9803/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/1089",
+                "name": "Sol Brodsky",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/196",
+                "name": "Jack Kirby",
+                "role": "penciller (cover)"
+              }
+            ],
+            "returned": 2
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9803/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9803/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/9897",
+                "name": "[none]",
+                "type": "cover"
+              }
+            ],
+            "returned": 1
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9803/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 9805,
+          "digitalId": 0,
+          "title": "Love Romances (1949) #11",
+          "issueNumber": 11,
+          "variantDescription": "",
+          "description": null,
+          "modified": "-0001-11-30T00:00:00-0500",
+          "isbn": "",
+          "upc": "",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 0,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/9805",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/9805/love_romances_1949_11?utm_campaign=apiRef&utm_source=ddf4636674238849e5422709e17c4863"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/2033",
+            "name": "Love Romances (1949 - 1963)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 0
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [],
+          "creators": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9805/creators",
+            "items": [],
+            "returned": 0
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9805/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9805/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/9899",
+                "name": "",
+                "type": ""
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/66716",
+                "name": "Love Romances 11 cover",
+                "type": "cover"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9805/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 9799,
+          "digitalId": 0,
+          "title": "Love Romances (1949) #101",
+          "issueNumber": 101,
+          "variantDescription": "",
+          "description": null,
+          "modified": "-0001-11-30T00:00:00-0500",
+          "isbn": "",
+          "upc": "",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 0,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/9799",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/9799/love_romances_1949_101?utm_campaign=apiRef&utm_source=ddf4636674238849e5422709e17c4863"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/2033",
+            "name": "Love Romances (1949 - 1963)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 0
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [],
+          "creators": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9799/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/1523",
+                "name": "Vince Colletta",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/196",
+                "name": "Jack Kirby",
+                "role": "penciller (cover)"
+              }
+            ],
+            "returned": 2
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9799/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9799/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/9893",
+                "name": "Regular Gal!",
+                "type": "cover"
+              }
+            ],
+            "returned": 1
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9799/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 9797,
+          "digitalId": 0,
+          "title": "Love Romances (1949) #10",
+          "issueNumber": 10,
+          "variantDescription": "",
+          "description": null,
+          "modified": "-0001-11-30T00:00:00-0500",
+          "isbn": "",
+          "upc": "",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 0,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/9797",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/9797/love_romances_1949_10?utm_campaign=apiRef&utm_source=ddf4636674238849e5422709e17c4863"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/2033",
+            "name": "Love Romances (1949 - 1963)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "-0001-11-30T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 0
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [],
+          "creators": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9797/creators",
+            "items": [],
+            "returned": 0
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9797/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9797/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/9891",
+                "name": "",
+                "type": ""
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/66715",
+                "name": "Love Romances 10 cover",
+                "type": "cover"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/9797/events",
+            "items": [],
+            "returned": 0
+          }
+        }
+      ]
+    }
+  }

@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA;EACE,oCAAoC;EACpC,cAAc;AAChB;;AAEA;EACE,iCAAiC;EACjC,cAAc;AAChB","file":"styles.b61e60ae.css","sourceRoot":"..","sourcesContent":["body {\r\n  font-family: 'Open Sans', sans-serif;\r\n  color: #272829;\r\n}\r\n\r\nh1, h2, h3, h4, h5 {\r\n  font-family: 'Marvel', sans-serif;\r\n  color: #45505b;\r\n}"]}

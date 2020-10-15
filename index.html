@@ -1,10 +1,55 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <h1>Demo app v1</h1>
-    <p>Added some text</p>
-    <script src="./index.js"></script>
-  </body>
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Marvel wallet</title>
+  <meta name="description" content="El mundo del Marvel al alcance de sus teléfonos">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+  <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="https://kit.fontawesome.com/22bc6a1540.js" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <script src="./js/queryUtils.js"></script>
+  <script src="./js/index.js"></script>
+  <header id="top">
+    <h1>Marvel wallet</h1>
+    <p>Latest comics and news about Marvel Universe</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#top"><span>Inicio</span></a></li>
+      <li><a href="#latest"><span>Ultimos comics</span></a></li>
+      <li><a href="#categories"><span>Categorías</span></a></li>
+      <li><a href="#characters"><span>Personajes</span></a></li>
+      <li><a href="#about"><span>Acerca de</span></a></li>
+    </ul>
+  </nav>
+  <div id="wrapper">
+    <section id="latest">
+      <h2>Últimos comics</h2>
+      <div id="latestContent"></div>
+    </section>
+    <section id="categories">
+      <h2>Categorías</h2>
+    </section>
+    <section id="characters">
+      <h2>Personajes</h2>
+    </section>
+    <section id="about">
+      <h2>Acerca de</h2>
+    </section>
+  </div>
+  <footer>
+
+  </footer>
 </html>

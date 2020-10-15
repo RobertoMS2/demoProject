@@ -117,79 +117,61 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/queryUtils.js":[function(require,module,exports) {
+var public_key = "ddf4636674238849e5422709e17c4863";
+var private_key = "09b155ea7febdbd215169af859ab76c676ae1fec";
+var url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=onsaleDate&limit=8&apikey=' + public_key;
+var url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
+var latestContent = document.querySelector('#latestContent');
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
+function getAllcomics() {
+  fetch(url_comic).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    outputComics();
+  }).catch(function (error) {
+    console.error(JSON.stringify(error));
+  });
 }
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+function getComic(id) {
+  var url = url_comic + id + '?apikey=' + public_key;
+  fetch(url).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    data.data.results.forEach(function (element) {
+      latestContent.innerHTML = '';
+      outputComic(element);
+    });
+  }).catch(function (error) {
+    console.error(JSON.stringify(error));
+  });
+}
+/*
+    Template
+    <div class="comicItem">
+        <img src="">
+        <h3>Comic name</h3>
+        <p>small text</p>
+        <button>Read more</button>
+    </div>
+*/
 
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
 
-  return '/';
+function outputComics(data) {
+  var item = document.createElement('div');
+  item.setAttribute('class', comicItem);
+  var code = '';
+  code += '<img src="' + data.thumbnail + '.' + data.extension + '">';
+  code += '<h3>' + data.title + '</h3>';
+  code += '<p>' + data.description + '</p>';
+  code += '<a href="/comic/?id=' + data.id + '">Ver más</a>';
+  item.innerHTML = code;
+  latestContent.appendChild(item);
 }
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function outputComic() {}
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +375,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/styles.8986bff4.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/queryUtils.js"], null)
+//# sourceMappingURL=/queryUtils.af259d13.js.map

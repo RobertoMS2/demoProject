@@ -1,0 +1,55 @@
+const public_key = "ddf4636674238849e5422709e17c4863";
+const private_key = "09b155ea7febdbd215169af859ab76c676ae1fec";
+const url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=onsaleDate&limit=8&apikey=' + public_key;
+const url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
+
+const latestContent = document.querySelector('#latestContent');
+
+function getAllcomics() {
+    fetch(url_comic).then(response => {
+        return response.json();
+    }).then(data => {
+        outputComics();
+    }).catch(error => {
+        console.error(JSON.stringify(error));
+    });
+}
+
+function getComic(id) {
+    const url = url_comic + id + '?apikey=' + public_key;
+    fetch(url).then(response => {
+        return response.json();
+    }).then(data => {
+        data.data.results.forEach(element => {
+            latestContent.innerHTML = '';
+            outputComic(element); 
+        });
+    }).catch(error => {
+        console.error(JSON.stringify(error));
+    });
+}
+
+/*
+    Template
+    <div class="comicItem">
+        <img src="">
+        <h3>Comic name</h3>
+        <p>small text</p>
+        <button>Read more</button>
+    </div>
+*/
+function outputComics(data) {
+    let item = document.createElement('div');
+    item.setAttribute('class', comicItem);
+    let code = '';
+    code += '<img src="' + data.thumbnail + '.' + data.extension + '">';
+    code += '<h3>' + data.title + '</h3>';
+    code += '<p>' + data.description + '</p>';
+    code += '<a href="/comic/?id=' + data.id + '">Ver más</a>';
+    item.innerHTML = code;
+    latestContent.appendChild(item);
+}
+
+function outputComic() {
+
+}
