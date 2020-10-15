@@ -1,6 +1,8 @@
-const public_key = "ddf4636674238849e5422709e17c4863";
-const private_key = "09b155ea7febdbd215169af859ab76c676ae1fec";
-const url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=onsaleDate&limit=8&apikey=' + public_key;
+const md5 = require('crypto-js/md5');
+
+const public_key = 'ddf4636674238849e5422709e17c4863';
+const private_key = '09b155ea7febdbd215169af859ab76c676ae1fec';
+const url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=8&apikey=' + public_key;
 const url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
 
 const latestContent = document.querySelector('#latestContent');
@@ -16,9 +18,9 @@ const latestContent = document.querySelector('#latestContent');
 */
 function outputComics(data) {
     let item = document.createElement('div');
-    item.setAttribute('class', comicItem);
+    item.setAttribute('class', 'comicItem');
     let code = '';
-    code += '<img src="' + data.thumbnail + '.' + data.extension + '">';
+    code += '<img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '">';
     code += '<h3>' + data.title + '</h3>';
     code += '<p>' + data.description + '</p>';
     code += '<a href="/comic/?id=' + data.id + '">Ver más</a>';
@@ -32,12 +34,20 @@ function outputComic() {
 
 module.exports = {
     getAllcomics: function() {
-        fetch(url_comic).then(response => {
+        const ts = new Date().getTime();
+        const message = ts+private_key+public_key;
+        const md = md5(message);
+        const hash = md.toString();
+        const url = url_comics + '&ts=' + ts + '&hash=' + hash;
+
+        fetch(url).then(response => {
             return response.json();
         }).then(data => {
-            outputComics();
+            data.data.results.forEach(element => {
+                outputComics(element);
+            });
         }).catch(error => {
-            console.error(JSON.stringify(error));
+            console.error(error);
         });
     }
     ,
