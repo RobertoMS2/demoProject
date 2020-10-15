@@ -123,30 +123,6 @@ var private_key = "09b155ea7febdbd215169af859ab76c676ae1fec";
 var url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=onsaleDate&limit=8&apikey=' + public_key;
 var url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
 var latestContent = document.querySelector('#latestContent');
-
-function getAllcomics() {
-  fetch(url_comic).then(function (response) {
-    return response.json();
-  }).then(function (data) {
-    outputComics();
-  }).catch(function (error) {
-    console.error(JSON.stringify(error));
-  });
-}
-
-function getComic(id) {
-  var url = url_comic + id + '?apikey=' + public_key;
-  fetch(url).then(function (response) {
-    return response.json();
-  }).then(function (data) {
-    data.data.results.forEach(function (element) {
-      latestContent.innerHTML = '';
-      outputComic(element);
-    });
-  }).catch(function (error) {
-    console.error(JSON.stringify(error));
-  });
-}
 /*
     Template
     <div class="comicItem">
@@ -156,7 +132,6 @@ function getComic(id) {
         <button>Read more</button>
     </div>
 */
-
 
 function outputComics(data) {
   var item = document.createElement('div');
@@ -171,6 +146,31 @@ function outputComics(data) {
 }
 
 function outputComic() {}
+
+module.exports = {
+  getAllcomics: function getAllcomics() {
+    fetch(url_comic).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      outputComics();
+    }).catch(function (error) {
+      console.error(JSON.stringify(error));
+    });
+  },
+  getComic: function getComic(id) {
+    var url = url_comic + id + '?apikey=' + public_key;
+    fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      data.data.results.forEach(function (element) {
+        latestContent.innerHTML = '';
+        outputComic(element);
+      });
+    }).catch(function (error) {
+      console.error(JSON.stringify(error));
+    });
+  }
+};
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

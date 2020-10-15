@@ -5,30 +5,6 @@ const url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
 
 const latestContent = document.querySelector('#latestContent');
 
-function getAllcomics() {
-    fetch(url_comic).then(response => {
-        return response.json();
-    }).then(data => {
-        outputComics();
-    }).catch(error => {
-        console.error(JSON.stringify(error));
-    });
-}
-
-function getComic(id) {
-    const url = url_comic + id + '?apikey=' + public_key;
-    fetch(url).then(response => {
-        return response.json();
-    }).then(data => {
-        data.data.results.forEach(element => {
-            latestContent.innerHTML = '';
-            outputComic(element); 
-        });
-    }).catch(error => {
-        console.error(JSON.stringify(error));
-    });
-}
-
 /*
     Template
     <div class="comicItem">
@@ -52,4 +28,30 @@ function outputComics(data) {
 
 function outputComic() {
 
+}
+
+module.exports = {
+    getAllcomics: function() {
+        fetch(url_comic).then(response => {
+            return response.json();
+        }).then(data => {
+            outputComics();
+        }).catch(error => {
+            console.error(JSON.stringify(error));
+        });
+    }
+    ,
+    getComic: function(id) {
+        const url = url_comic + id + '?apikey=' + public_key;
+        fetch(url).then(response => {
+            return response.json();
+        }).then(data => {
+            data.data.results.forEach(element => {
+                latestContent.innerHTML = '';
+                outputComic(element); 
+            });
+        }).catch(error => {
+            console.error(JSON.stringify(error));
+        });
+    }
 }

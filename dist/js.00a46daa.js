@@ -117,9 +117,65 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/index.js":[function(require,module,exports) {
+})({"js/queryUtils.js":[function(require,module,exports) {
+var public_key = "ddf4636674238849e5422709e17c4863";
+var private_key = "09b155ea7febdbd215169af859ab76c676ae1fec";
+var url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=onsaleDate&limit=8&apikey=' + public_key;
+var url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
+var latestContent = document.querySelector('#latestContent');
+/*
+    Template
+    <div class="comicItem">
+        <img src="">
+        <h3>Comic name</h3>
+        <p>small text</p>
+        <button>Read more</button>
+    </div>
+*/
 
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function outputComics(data) {
+  var item = document.createElement('div');
+  item.setAttribute('class', comicItem);
+  var code = '';
+  code += '<img src="' + data.thumbnail + '.' + data.extension + '">';
+  code += '<h3>' + data.title + '</h3>';
+  code += '<p>' + data.description + '</p>';
+  code += '<a href="/comic/?id=' + data.id + '">Ver más</a>';
+  item.innerHTML = code;
+  latestContent.appendChild(item);
+}
+
+function outputComic() {}
+
+module.exports = {
+  getAllcomics: function getAllcomics() {
+    fetch(url_comic).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      outputComics();
+    }).catch(function (error) {
+      console.error(JSON.stringify(error));
+    });
+  },
+  getComic: function getComic(id) {
+    var url = url_comic + id + '?apikey=' + public_key;
+    fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      data.data.results.forEach(function (element) {
+        latestContent.innerHTML = '';
+        outputComic(element);
+      });
+    }).catch(function (error) {
+      console.error(JSON.stringify(error));
+    });
+  }
+};
+},{}],"js/index.js":[function(require,module,exports) {
+var queryUtis = require('./queryUtils');
+
+queryUtis.getAllcomics();
+},{"./queryUtils":"js/queryUtils.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
