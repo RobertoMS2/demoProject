@@ -18,7 +18,7 @@ const latestContent = document.querySelector('#latestContent');
 */
 function outputComics(data) {
     let item = document.createElement('div');
-    item.setAttribute('class', 'comicItem');
+    item.setAttribute('class', 'comicItem col col-3');
     let code = '';
     code += '<img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '">';
     code += '<h3>' + data.title + '</h3>';

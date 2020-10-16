@@ -54244,7 +54244,7 @@ var latestContent = document.querySelector('#latestContent');
 
 function outputComics(data) {
   var item = document.createElement('div');
-  item.setAttribute('class', 'comicItem');
+  item.setAttribute('class', 'comicItem col col-3');
   var code = '';
   code += '<img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '">';
   code += '<h3>' + data.title + '</h3>';

@@ -20,22 +20,24 @@
 
 <body>
   <header id="top">
-    <h1>Marvel wallet</h1>
+    <div class="bg-color-primary-black" id="bar">
+      <h1><span class="marvel">Marvel</span><span class="studios">wallet</span></h1>
+    </div>
     <p>Latest comics and news about Marvel Universe</p>
   </header>
-  <nav>
+  <nav id="mainNav">
     <ul>
-      <li><a href="#top"><span>Inicio</span></a></li>
-      <li><a href="#latest"><span>Ultimos comics</span></a></li>
-      <li><a href="#categories"><span>Categorías</span></a></li>
-      <li><a href="#characters"><span>Personajes</span></a></li>
-      <li><a href="#about"><span>Acerca de</span></a></li>
+      <li><a href="#top"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+      <li><a href="#latest"><i class="far fa-newspaper"></i><span>Ultimos comics</span></a></li>
+      <li><a href="#categories"><i class="fas fa-tags"></i><span>Categorías</span></a></li>
+      <li><a href="#characters"><i class="fas fa-mask"></i><span>Personajes</span></a></li>
+      <li><a href="#about"><i class="far fa-address-card"></i><span>Acerca de</span></a></li>
     </ul>
   </nav>
   <div id="wrapper">
     <section id="latest">
-      <h2>Últimos comics</h2>
-      <div id="latestContent"></div>
+      <h2 class="title"><span>Últimos comics</span></h2>
+      <div id="latestContent" class="container"></div>
     </section>
     <section id="categories">
       <h2>Categorías</h2>
@@ -51,5 +53,6 @@
 
   </footer>
   <script src="./js/queryUtils.js"></script>
+  <script src="./js/sticky.js"></script>
   <script src="./js/index.js"></script>
 </html>
