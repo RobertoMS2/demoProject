@@ -3,6 +3,7 @@
   --primary-black: #202020;
   --secundary-black: #45505b;
   --primary-white: #fefefe;
+  --secundary-white: #efefef;
 }
 
 .color-primary-red {
@@ -27,6 +28,10 @@
 
 .bg-color-primary-white {
   background-color: var(--primary-white);
+}
+
+.addPadding {
+  padding: 2rem 0;
 }
 
 img {
@@ -148,7 +153,9 @@ img {
 /* RESPONSIVE BOXES */
 .r-box{
 	position: relative;
-	width: auto;
+  width: auto;
+  overflow: hidden;
+  background-color: var(--secundary-white);
 }
 
 .r-box:before{
@@ -193,6 +200,16 @@ img {
 	padding-top: 36.85897435897436%;
 }
 
+.r-box img {
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    top: 50%;
+}
 
 
 body {
@@ -211,6 +228,10 @@ h1, h2, h3, h4, h5 {
   background-image: url(../img/header.jpg);
   height: 100vh;
   background-size: 100%;
+}
+
+.innerWeb #top {
+  height: auto;
 }
 
   #top p {
@@ -325,3 +346,70 @@ h1, h2, h3, h4, h5 {
       #mainNav ul a:hover span {
         display: block;
       }
+  
+/* Noticias portada */
+.comicItem {
+  margin-bottom: 2rem;
+}
+
+.comicItem h3 {
+  background: var(--primary-black);
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: var(--primary-white);
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.comicItem a {
+  display: block;
+  color: var(--primary-black);
+  background-color: var(--primary-red);
+  width: 100px;
+  text-align: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+.comicItem a span {
+  display: none;
+  float: left;
+}
+
+  .comicItem a:hover {
+    width: 140px;
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+  }
+
+  .comicItem a:hover span {
+    display: block
+  }
+
+.listWrapper {
+  background-color: var(--primary-black);
+}
+
+.characterItem {
+  width: 20%;
+  position: relative;
+}
+
+  .characterItem h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: var(--primary-red);
+    margin: 0;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--primary-white);
+  }
+
+.innerWeb #wrapper {
+  margin-top: 8rem;
+}

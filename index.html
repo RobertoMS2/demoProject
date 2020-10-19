@@ -29,8 +29,8 @@
     <ul>
       <li><a href="#top"><i class="fas fa-home"></i><span>Inicio</span></a></li>
       <li><a href="#latest"><i class="far fa-newspaper"></i><span>Ultimos comics</span></a></li>
-      <li><a href="#categories"><i class="fas fa-tags"></i><span>Categorías</span></a></li>
       <li><a href="#characters"><i class="fas fa-mask"></i><span>Personajes</span></a></li>
+      <li><a href="#series"><i class="fas fa-tags"></i><span>Series</span></a></li>
       <li><a href="#about"><i class="far fa-address-card"></i><span>Acerca de</span></a></li>
     </ul>
   </nav>
@@ -39,20 +39,48 @@
       <h2 class="title"><span>Últimos comics</span></h2>
       <div id="latestContent" class="container"></div>
     </section>
-    <section id="categories">
-      <h2>Categorías</h2>
-    </section>
     <section id="characters">
-      <h2>Personajes</h2>
+      <h2 class="title"><span>Personajes</span></h2>
+      <div class="listWrapper">
+        <div id="charactersList" class="container"></div>
+      </div>
     </section>
-    <section id="about">
-      <h2>Acerca de</h2>
+    <section id="series">
+      <h2 class="title"><span>Series</span></h2>
+      <div id="latestSeries" class="container"></div>
     </section>
   </div>
   <footer>
-
+    <section id="about">
+      <h2 class="title"><span>Acerca de</span></h2>
+      <div class="listWrapper color-primary-white addPadding">
+        <div class="container">
+          <div class="col col-2">
+            <span class="icon--svg main-footer__logo--svg" aria-hidden="true">
+              <svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+                <rect fill="#EC1D24" width="100%" height="100%"></rect>
+                <path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="col col-8">
+            <p>Marvel wallet es una web desarrollada para la asignatura Herramientas HTML y CSS por el alumno <i>Roberto Martínez Sánchez</i></p>
+            <p>Esta demo técnica incluye la información necesaria para atacar al api rest de Marvel así como ejemplos sencillos sobre como maquetar y parsear los diferentes JSON con los que responde el api</p>
+            <p>Para ampliar información sobre el proyecto, su conversión en app y la ampliación a catálogo interactivo no dude en consultar con su autor</p>
+          </div>
+          <div class="col col-2">
+            <ul>
+              <li><b>Roberto Martínez Sánchez</b></li>
+              <li><a class="color-primary-red" href="mailto:rmarsan@dipucadiz.es">rmarsan@dipucadiz.es</a></li>
+              <li>UOC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </footer>
   <script src="./js/queryUtils.js"></script>
+  <script src="./js/scroll.js"></script>
   <script src="./js/sticky.js"></script>
   <script src="./js/index.js"></script>
 </html>

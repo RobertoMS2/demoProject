@@ -27270,36 +27270,30 @@ function getr(priv) {
 
 },{"bn.js":"node_modules/browserify-rsa/node_modules/bn.js/lib/bn.js","randombytes":"node_modules/randombytes/browser.js","buffer":"node_modules/buffer/index.js"}],"node_modules/elliptic/package.json":[function(require,module,exports) {
 module.exports = {
-  "_args": [
-    [
-      "elliptic@6.5.3",
-      "C:\\Users\\rmartinezs\\Desktop\\demoProyect\\demoProject"
-    ]
-  ],
-  "_development": true,
-  "_from": "elliptic@6.5.3",
+  "_from": "elliptic@^6.5.3",
   "_id": "elliptic@6.5.3",
   "_inBundle": false,
   "_integrity": "sha512-IMqzv5wNQf+E6aHeIqATs0tOLeOTwj1QKbRcS3jBbYkl5oLAserA8yJTT7/VyHUYG91PRmPyeQDObKLPpeS4dw==",
   "_location": "/elliptic",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "elliptic@6.5.3",
+    "raw": "elliptic@^6.5.3",
     "name": "elliptic",
     "escapedName": "elliptic",
-    "rawSpec": "6.5.3",
+    "rawSpec": "^6.5.3",
     "saveSpec": null,
-    "fetchSpec": "6.5.3"
+    "fetchSpec": "^6.5.3"
   },
   "_requiredBy": [
     "/browserify-sign",
     "/create-ecdh"
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.5.3.tgz",
-  "_spec": "6.5.3",
-  "_where": "C:\\Users\\rmartinezs\\Desktop\\demoProyect\\demoProject",
+  "_shasum": "cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6",
+  "_spec": "elliptic@^6.5.3",
+  "_where": "/home/robertoms2/demoProject/node_modules/browserify-sign",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -27307,6 +27301,7 @@ module.exports = {
   "bugs": {
     "url": "https://github.com/indutny/elliptic/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "bn.js": "^4.4.0",
     "brorand": "^1.0.1",
@@ -27316,6 +27311,7 @@ module.exports = {
     "minimalistic-assert": "^1.0.0",
     "minimalistic-crypto-utils": "^1.0.0"
   },
+  "deprecated": false,
   "description": "EC cryptography",
   "devDependencies": {
     "brfs": "^1.4.3",
@@ -54230,31 +54226,53 @@ var md5 = require('crypto-js/md5');
 var public_key = 'ddf4636674238849e5422709e17c4863';
 var private_key = '09b155ea7febdbd215169af859ab76c676ae1fec';
 var url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=8&apikey=' + public_key;
-var url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
+var url_series = 'https://gateway.marvel.com:443/v1/public/series?orderBy=modified&limit=6&apikey=' + public_key;
+var url_characters = 'https://gateway.marvel.com:443/v1/public/characters?orderBy=modified&limit=5&apikey=' + public_key;
 var latestContent = document.querySelector('#latestContent');
-/*
-    Template
-    <div class="comicItem">
-        <img src="">
-        <h3>Comic name</h3>
-        <p>small text</p>
-        <button>Read more</button>
-    </div>
-*/
+var charactersList = document.querySelector('#charactersList');
+var latestSeries = document.querySelector('#latestSeries');
 
 function outputComics(data) {
   var item = document.createElement('div');
   item.setAttribute('class', 'comicItem col col-3');
   var code = '';
-  code += '<img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '">';
+  code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
   code += '<h3>' + data.title + '</h3>';
-  code += '<p>' + data.description + '</p>';
-  code += '<a href="/comic/?id=' + data.id + '">Ver más</a>';
+
+  if (data.description !== null) {
+    code += '<p>' + data.description + '</p>';
+  }
+
+  code += '<a href="./comic.html?id=' + data.id + '">Ver más <span>&gt&gt</span></a>';
   item.innerHTML = code;
   latestContent.appendChild(item);
 }
 
-function outputComic() {}
+function outputCharacters(data) {
+  var character = document.createElement('div');
+  character.setAttribute('class', 'characterItem');
+  var code = '';
+  code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+  code += '<h3>' + data.name + '</h3>';
+  character.innerHTML = code;
+  charactersList.appendChild(character);
+}
+
+function outputSeries(data) {
+  var item = document.createElement('div');
+  item.setAttribute('class', 'comicItem col col-4');
+  var code = '';
+  code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+  code += '<h3>' + data.title + '</h3>';
+
+  if (data.description !== null) {
+    code += '<p>' + data.description + '</p>';
+  }
+
+  code += '<a href="/series/?id="' + data.id + '">Ver más <span>&gt&gt</span></a>';
+  item.innerHTML = code;
+  latestSeries.appendChild(item);
+}
 
 module.exports = {
   getAllcomics: function getAllcomics() {
@@ -54273,14 +54291,35 @@ module.exports = {
       console.error(error);
     });
   },
-  getComic: function getComic(id) {
-    var url = url_comic + id + '?apikey=' + public_key;
+  getCharacters: function getCharacters() {
+    var ts = new Date().getTime();
+    var message = ts + private_key + public_key;
+    var md = md5(message);
+    var hash = md.toString();
+    var url = url_characters + '&ts=' + ts + '&hash=' + hash;
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
+      charactersList.innerHTML = '';
       data.data.results.forEach(function (element) {
-        latestContent.innerHTML = '';
-        outputComic(element);
+        outputCharacters(element);
+      });
+    }).catch(function (error) {
+      console.error(JSON.stringify(error));
+    });
+  },
+  getSeries: function getSeries() {
+    var ts = new Date().getTime();
+    var message = ts + private_key + public_key;
+    var md = md5(message);
+    var hash = md.toString();
+    var url = url_series + '&ts=' + ts + '&hash=' + hash;
+    fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      latestSeries.innerHTML = '';
+      data.data.results.forEach(function (element) {
+        outputSeries(element);
       });
     }).catch(function (error) {
       console.error(JSON.stringify(error));
@@ -54315,7 +54354,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65396" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33989" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
