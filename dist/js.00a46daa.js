@@ -54220,14 +54220,19 @@ var define;
 	return CryptoJS.MD5;
 
 }));
-},{"./core":"node_modules/crypto-js/core.js"}],"js/queryUtils.js":[function(require,module,exports) {
+},{"./core":"node_modules/crypto-js/core.js"}],"js/consts.js":[function(require,module,exports) {
+module.exports = {
+  public_key: 'ddf4636674238849e5422709e17c4863',
+  private_key: '09b155ea7febdbd215169af859ab76c676ae1fec'
+};
+},{}],"js/queryUtils.js":[function(require,module,exports) {
 var md5 = require('crypto-js/md5');
 
-var public_key = 'ddf4636674238849e5422709e17c4863';
-var private_key = '09b155ea7febdbd215169af859ab76c676ae1fec';
-var url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=8&apikey=' + public_key;
-var url_series = 'https://gateway.marvel.com:443/v1/public/series?orderBy=modified&limit=6&apikey=' + public_key;
-var url_characters = 'https://gateway.marvel.com:443/v1/public/characters?orderBy=modified&limit=5&apikey=' + public_key;
+var constants = require('./consts');
+
+var url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=8&apikey=' + constants.public_key;
+var url_series = 'https://gateway.marvel.com:443/v1/public/series?orderBy=modified&limit=6&apikey=' + constants.public_key;
+var url_characters = 'https://gateway.marvel.com:443/v1/public/characters?orderBy=modified&limit=5&apikey=' + constants.public_key;
 var latestContent = document.querySelector('#latestContent');
 var charactersList = document.querySelector('#charactersList');
 var latestSeries = document.querySelector('#latestSeries');
@@ -54277,7 +54282,7 @@ function outputSeries(data) {
 module.exports = {
   getAllcomics: function getAllcomics() {
     var ts = new Date().getTime();
-    var message = ts + private_key + public_key;
+    var message = ts + constants.private_key + constants.public_key;
     var md = md5(message);
     var hash = md.toString();
     var url = url_comics + '&ts=' + ts + '&hash=' + hash;
@@ -54293,7 +54298,7 @@ module.exports = {
   },
   getCharacters: function getCharacters() {
     var ts = new Date().getTime();
-    var message = ts + private_key + public_key;
+    var message = ts + constants.private_key + constants.public_key;
     var md = md5(message);
     var hash = md.toString();
     var url = url_characters + '&ts=' + ts + '&hash=' + hash;
@@ -54310,7 +54315,7 @@ module.exports = {
   },
   getSeries: function getSeries() {
     var ts = new Date().getTime();
-    var message = ts + private_key + public_key;
+    var message = ts + constants.private_key + constants.public_key;
     var md = md5(message);
     var hash = md.toString();
     var url = url_series + '&ts=' + ts + '&hash=' + hash;
@@ -54326,7 +54331,7 @@ module.exports = {
     });
   }
 };
-},{"crypto-js/md5":"node_modules/crypto-js/md5.js"}],"js/index.js":[function(require,module,exports) {
+},{"crypto-js/md5":"node_modules/crypto-js/md5.js","./consts":"js/consts.js"}],"js/index.js":[function(require,module,exports) {
 var queryUtis = require('./queryUtils');
 
 queryUtis.getAllcomics();
@@ -54361,7 +54366,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33989" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33291" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

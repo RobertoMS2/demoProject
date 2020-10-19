@@ -1,7 +1,6 @@
 const md5 = require('crypto-js/md5');
+const constants = require('./consts');
 
-const public_key = 'ddf4636674238849e5422709e17c4863';
-const private_key = '09b155ea7febdbd215169af859ab76c676ae1fec';
 const url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
 
 const detail = document.querySelector('#wrapper');
@@ -22,11 +21,39 @@ function outputComic(data) {
         code += '<p><b>isbn: ' + data.isbn + '</b></p>';
     }
     code += '<p><b>Fecha de venta:</b> ' + data.dates[0].date + '</p>';
-    code += '<p><b>Serie:</b>' + data.series.name + '</p>';
-    code += '<h2>Autores</h2>';
+    code += '<h2>Precios</h2>';
     code += '<ul>';
-    data.creators.items.forEach(element => {
-        code += '<li>' + element.name + ' (' + element.role + ').</li>';
+    data.prices.forEach(price => {
+        let priceName = '';
+        if (price.type === 'printPrice') {
+            priceName = 'Precio de la versión impresa:';
+        } else if (price.type === 'digitalPurchasePrice') {
+            priceName = 'Precio de la versión digital:';
+        }
+        code += '<li>' + priceName + ' ' + price.price + '</li>';
+    })
+    code += '</ul>';
+    code += '<p><b>Serie:</b>' + data.series.name + '</p>';
+    if (data.creators.available > 0) {
+        code += '<h2>Autores</h2>';
+        code += '<ul>';
+        data.creators.items.forEach(element => {
+            code += '<li>' + element.name + ' (' + element.role + ').</li>';
+        }); 
+        code += '</ul>';
+    }
+    if (data.characters.available > 0) {
+        code += '<h2>Personajes</h2>';
+        code += '<ul>';
+        data.characters.items.forEach(character => {
+            code += '<li>' + character.name + '</li>';
+        }); 
+        code += '</ul>';
+    }
+    code += '<h2>Historias</h2>';
+    code += '<ul>';
+    data.stories.items.forEach(story => {
+        code += '<li>' + story.name + '. Tipo: ' + story.type + '</li>';
     }); 
     code += '</ul>';
     item.innerHTML = code;
@@ -36,10 +63,10 @@ function outputComic(data) {
 module.exports = {
     getComic: function(id) {
         const ts = new Date().getTime();
-        const message = ts+private_key+public_key;
+        const message = ts+constants.private_key+constants.public_key;
         const md = md5(message);
         const hash = md.toString();
-        const url = url_comic + id + '?apikey=' + public_key + '&ts=' + ts + '&hash=' + hash;
+        const url = url_comic + id + '?apikey=' + constants.public_key + '&ts=' + ts + '&hash=' + hash;
 
         fetch(url).then(response => {
             return response.json();

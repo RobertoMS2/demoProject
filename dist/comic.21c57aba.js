@@ -54220,11 +54220,16 @@ var define;
 	return CryptoJS.MD5;
 
 }));
-},{"./core":"node_modules/crypto-js/core.js"}],"js/comicUtils.js":[function(require,module,exports) {
+},{"./core":"node_modules/crypto-js/core.js"}],"js/consts.js":[function(require,module,exports) {
+module.exports = {
+  public_key: 'ddf4636674238849e5422709e17c4863',
+  private_key: '09b155ea7febdbd215169af859ab76c676ae1fec'
+};
+},{}],"js/comicUtils.js":[function(require,module,exports) {
 var md5 = require('crypto-js/md5');
 
-var public_key = 'ddf4636674238849e5422709e17c4863';
-var private_key = '09b155ea7febdbd215169af859ab76c676ae1fec';
+var constants = require('./consts');
+
 var url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
 var detail = document.querySelector('#wrapper');
 
@@ -54247,11 +54252,44 @@ function outputComic(data) {
   }
 
   code += '<p><b>Fecha de venta:</b> ' + data.dates[0].date + '</p>';
-  code += '<p><b>Serie:</b>' + data.series.name + '</p>';
-  code += '<h2>Autores</h2>';
+  code += '<h2>Precios</h2>';
   code += '<ul>';
-  data.creators.items.forEach(function (element) {
-    code += '<li>' + element.name + ' (' + element.role + ').</li>';
+  data.prices.forEach(function (price) {
+    var priceName = '';
+
+    if (price.type === 'printPrice') {
+      priceName = 'Precio de la versión impresa:';
+    } else if (price.type === 'digitalPurchasePrice') {
+      priceName = 'Precio de la versión digital:';
+    }
+
+    code += '<li>' + priceName + ' ' + price.price + '</li>';
+  });
+  code += '</ul>';
+  code += '<p><b>Serie:</b>' + data.series.name + '</p>';
+
+  if (data.creators.available > 0) {
+    code += '<h2>Autores</h2>';
+    code += '<ul>';
+    data.creators.items.forEach(function (element) {
+      code += '<li>' + element.name + ' (' + element.role + ').</li>';
+    });
+    code += '</ul>';
+  }
+
+  if (data.characters.available > 0) {
+    code += '<h2>Personajes</h2>';
+    code += '<ul>';
+    data.characters.items.forEach(function (character) {
+      code += '<li>' + character.name + '</li>';
+    });
+    code += '</ul>';
+  }
+
+  code += '<h2>Historias</h2>';
+  code += '<ul>';
+  data.stories.items.forEach(function (story) {
+    code += '<li>' + story.name + '. Tipo: ' + story.type + '</li>';
   });
   code += '</ul>';
   item.innerHTML = code;
@@ -54261,10 +54299,10 @@ function outputComic(data) {
 module.exports = {
   getComic: function getComic(id) {
     var ts = new Date().getTime();
-    var message = ts + private_key + public_key;
+    var message = ts + constants.private_key + constants.public_key;
     var md = md5(message);
     var hash = md.toString();
-    var url = url_comic + id + '?apikey=' + public_key + '&ts=' + ts + '&hash=' + hash;
+    var url = url_comic + id + '?apikey=' + constants.public_key + '&ts=' + ts + '&hash=' + hash;
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
@@ -54277,7 +54315,7 @@ module.exports = {
     });
   }
 };
-},{"crypto-js/md5":"node_modules/crypto-js/md5.js"}],"js/comic.js":[function(require,module,exports) {
+},{"crypto-js/md5":"node_modules/crypto-js/md5.js","./consts":"js/consts.js"}],"js/comic.js":[function(require,module,exports) {
 var comicUtils = require('./comicUtils');
 
 var queryString = window.location.search;
@@ -54312,7 +54350,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33989" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33291" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

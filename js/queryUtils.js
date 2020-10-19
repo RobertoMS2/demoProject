@@ -1,10 +1,9 @@
 const md5 = require('crypto-js/md5');
+const constants = require('./consts');
 
-const public_key = 'ddf4636674238849e5422709e17c4863';
-const private_key = '09b155ea7febdbd215169af859ab76c676ae1fec';
-const url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=8&apikey=' + public_key;
-const url_series = 'https://gateway.marvel.com:443/v1/public/series?orderBy=modified&limit=6&apikey=' + public_key;
-const url_characters = 'https://gateway.marvel.com:443/v1/public/characters?orderBy=modified&limit=5&apikey=' + public_key;
+const url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=8&apikey=' + constants.public_key;
+const url_series = 'https://gateway.marvel.com:443/v1/public/series?orderBy=modified&limit=6&apikey=' + constants.public_key;
+const url_characters = 'https://gateway.marvel.com:443/v1/public/characters?orderBy=modified&limit=5&apikey=' + constants.public_key;
 
 const latestContent = document.querySelector('#latestContent');
 const charactersList = document.querySelector('#charactersList');
@@ -51,7 +50,7 @@ function outputSeries(data) {
 module.exports = {
     getAllcomics: function() {
         const ts = new Date().getTime();
-        const message = ts+private_key+public_key;
+        const message = ts+constants.private_key+constants.public_key;
         const md = md5(message);
         const hash = md.toString();
         const url = url_comics + '&ts=' + ts + '&hash=' + hash;
@@ -68,7 +67,7 @@ module.exports = {
     },
     getCharacters: function() {
         const ts = new Date().getTime();
-        const message = ts+private_key+public_key;
+        const message = ts+constants.private_key+constants.public_key;
         const md = md5(message);
         const hash = md.toString();
         const url = url_characters + '&ts=' + ts + '&hash=' + hash;
@@ -85,7 +84,7 @@ module.exports = {
     },
     getSeries: function() {
         const ts = new Date().getTime();
-        const message = ts+private_key+public_key;
+        const message = ts+constants.private_key+constants.public_key;
         const md = md5(message);
         const hash = md.toString();
         const url = url_series + '&ts=' + ts + '&hash=' + hash;
