@@ -54274,7 +54274,7 @@ function outputSeries(data) {
     code += '<p>' + data.description + '</p>';
   }
 
-  code += '<a href="/series/?id="' + data.id + '">Ver más <span>&gt&gt</span></a>';
+  code += '<a href="./series.html?id=' + data.id + '">Ver más <span>&gt&gt</span></a>';
   item.innerHTML = code;
   latestSeries.appendChild(item);
 }
@@ -54366,7 +54366,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33291" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36635" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

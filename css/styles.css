@@ -410,6 +410,6 @@ h1, h2, h3, h4, h5 {
     color: var(--primary-white);
   }
 
-.innerWeb #wrapper {
+.innerWeb #title_wrapper {
   margin-top: 8rem;
 }

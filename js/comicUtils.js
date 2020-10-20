@@ -2,18 +2,20 @@ const md5 = require('crypto-js/md5');
 const constants = require('./consts');
 
 const url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
+const url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=24&apikey=' + constants.public_key;
 
 const detail = document.querySelector('#wrapper');
+const title_wrapper = document.querySelector('#title_wrapper');
 
 function outputComic(data) {
     let item = document.createElement('div');
-    item.setAttribute('class', 'comicDetail container');
+    item.setAttribute('class', 'comicDetail container col col-12-np');
     let code = '';
     code += '<div class="col col-4">';
     code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
     code += '</div>';
     code += '<div class="col col-8">';
-    code += '<h1>' + data.title + '</h1>';
+    title_wrapper.innerHTML = '<h1 class="title"><span>' + data.title + '</span></h1>';
     if (data.description !== null) {
         code += '<div>' + data.description + '</div>';
     }
@@ -60,6 +62,20 @@ function outputComic(data) {
     detail.appendChild(item);
 }
 
+function outputComics(data) {
+    let item = document.createElement('div');
+    item.setAttribute('class', 'comicItem col col-3');
+    let code = '';
+    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+    code += '<h3>' + data.title + '</h3>';
+    if (data.description !== null) {
+        code += '<p>' + data.description + '</p>';
+    }
+    code += '<a href="./comic.html?id=' + data.id + '">Ver más <span>&gt&gt</span></a>';
+    item.innerHTML = code;
+    detail.appendChild(item);
+}
+
 module.exports = {
     getComic: function(id) {
         const ts = new Date().getTime();
@@ -74,6 +90,23 @@ module.exports = {
             detail.innerHTML = '';
             data.data.results.forEach(element => {
                 outputComic(element); 
+            });
+        }).catch(error => {
+            console.error(JSON.stringify(error));
+        });
+    },
+    getComicsExtended: function() {
+        const ts = new Date().getTime();
+        const message = ts+constants.private_key+constants.public_key;
+        const md = md5(message);
+        const hash = md.toString();
+        const url = url_comics + '&ts=' + ts + '&hash=' + hash;
+        fetch(url).then(response => {
+            return response.json();
+        }).then(data => {
+            title_wrapper.innerHTML = '<h1 class="title"><span>Comics</span></h1>';
+            data.data.results.forEach(element => {
+                outputComics(element);
             });
         }).catch(error => {
             console.error(JSON.stringify(error));

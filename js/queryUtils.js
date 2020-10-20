@@ -42,7 +42,7 @@ function outputSeries(data) {
     if (data.description !== null) {
         code += '<p>' + data.description + '</p>';
     }
-    code += '<a href="/series/?id="' + data.id + '">Ver más <span>&gt&gt</span></a>';
+    code += '<a href="./series.html?id=' + data.id + '">Ver más <span>&gt&gt</span></a>';
     item.innerHTML = code;
     latestSeries.appendChild(item);
 }

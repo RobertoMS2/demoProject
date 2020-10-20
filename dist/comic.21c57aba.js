@@ -54231,17 +54231,19 @@ var md5 = require('crypto-js/md5');
 var constants = require('./consts');
 
 var url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
+var url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=24&apikey=' + constants.public_key;
 var detail = document.querySelector('#wrapper');
+var title_wrapper = document.querySelector('#title_wrapper');
 
 function outputComic(data) {
   var item = document.createElement('div');
-  item.setAttribute('class', 'comicDetail container');
+  item.setAttribute('class', 'comicDetail container col col-12-np');
   var code = '';
   code += '<div class="col col-4">';
   code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
   code += '</div>';
   code += '<div class="col col-8">';
-  code += '<h1>' + data.title + '</h1>';
+  title_wrapper.innerHTML = '<h1 class="title"><span>' + data.title + '</span></h1>';
 
   if (data.description !== null) {
     code += '<div>' + data.description + '</div>';
@@ -54296,6 +54298,22 @@ function outputComic(data) {
   detail.appendChild(item);
 }
 
+function outputComics(data) {
+  var item = document.createElement('div');
+  item.setAttribute('class', 'comicItem col col-3');
+  var code = '';
+  code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+  code += '<h3>' + data.title + '</h3>';
+
+  if (data.description !== null) {
+    code += '<p>' + data.description + '</p>';
+  }
+
+  code += '<a href="./comic.html?id=' + data.id + '">Ver más <span>&gt&gt</span></a>';
+  item.innerHTML = code;
+  detail.appendChild(item);
+}
+
 module.exports = {
   getComic: function getComic(id) {
     var ts = new Date().getTime();
@@ -54313,6 +54331,23 @@ module.exports = {
     }).catch(function (error) {
       console.error(JSON.stringify(error));
     });
+  },
+  getComicsExtended: function getComicsExtended() {
+    var ts = new Date().getTime();
+    var message = ts + constants.private_key + constants.public_key;
+    var md = md5(message);
+    var hash = md.toString();
+    var url = url_comics + '&ts=' + ts + '&hash=' + hash;
+    fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      title_wrapper.innerHTML = '<h1 class="title"><span>Comics</span></h1>';
+      data.data.results.forEach(function (element) {
+        outputComics(element);
+      });
+    }).catch(function (error) {
+      console.error(JSON.stringify(error));
+    });
   }
 };
 },{"crypto-js/md5":"node_modules/crypto-js/md5.js","./consts":"js/consts.js"}],"js/comic.js":[function(require,module,exports) {
@@ -54321,7 +54356,12 @@ var comicUtils = require('./comicUtils');
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 var id = urlParams.get('id');
-comicUtils.getComic(id);
+
+if (id !== null && id !== '') {
+  comicUtils.getComic(id);
+} else {
+  comicUtils.getComicsExtended();
+}
 },{"./comicUtils":"js/comicUtils.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -54350,7 +54390,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33291" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36635" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
