@@ -1,5 +1,5 @@
 const md5 = require('crypto-js/md5');
-const constants = require('./consts');
+const constants = require('../utils/consts');
 
 const url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
 const url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=24&apikey=' + constants.public_key;

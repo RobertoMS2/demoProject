@@ -18,38 +18,16 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="innerWeb">
   <header id="top">
     <div class="bg-color-primary-black" id="bar">
-      <h1><span class="marvel">Marvel</span><span class="studios">wallet</span></h1>
+      <h1><a href="/index.html" title="Página de inicio de Marvel Wallet"><span class="marvel">Marvel</span><span class="studios">wallet</span></a></h1>
     </div>
-    <p>Latest comics and news about Marvel Universe</p>
   </header>
-  <nav id="mainNav">
-    <ul>
-      <li><a href="#top"><i class="fas fa-home"></i><span>Inicio</span></a></li>
-      <li><a href="#latest"><i class="far fa-newspaper"></i><span>Ultimos comics</span></a></li>
-      <li><a href="#characters"><i class="fas fa-mask"></i><span>Personajes</span></a></li>
-      <li><a href="#series"><i class="fas fa-tags"></i><span>Series</span></a></li>
-      <li><a href="#about"><i class="far fa-address-card"></i><span>Acerca de</span></a></li>
-    </ul>
-  </nav>
-  <div id="wrapper">
-    <section id="latest">
-      <h2 class="title"><span>Últimos comics</span></h2>
-      <div id="latestContent" class="container"></div>
-    </section>
-    <section id="characters">
-      <h2 class="title"><span>Personajes</span></h2>
-      <div class="listWrapper">
-        <div id="charactersList" class="container"></div>
-      </div>
-    </section>
-    <section id="series">
-      <h2 class="title"><span>Series</span></h2>
-      <div id="latestSeries" class="container"></div>
-    </section>
-  </div>
+
+  <div id="title_wrapper"></div>
+  <div id="wrapper" class="container"></div>
+
   <footer>
     <section id="about">
       <h2 class="title"><span>Acerca de</span></h2>
@@ -79,8 +57,6 @@
       </div>
     </section>
   </footer>
-  <script src="./js/queryUtils.js"></script>
-  <script src="./js/scroll.js"></script>
-  <script src="./js/sticky.js"></script>
-  <script src="./js/index.js"></script>
+  <script src="./js/utils/sticky.js"></script>
+  <script src="./js/series/series.js"></script>
 </html>
