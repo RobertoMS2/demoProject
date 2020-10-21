@@ -54258,7 +54258,7 @@ function outputCharacters(data) {
   character.setAttribute('class', 'characterItem');
   var code = '';
   code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
-  code += '<h3>' + data.name + '</h3>';
+  code += '<p><a href="./character.html?id=' + data.id + '">' + data.name + '</a></p>';
   character.innerHTML = code;
   charactersList.appendChild(character);
 }
@@ -54289,6 +54289,7 @@ module.exports = {
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
+      latestContent.innerHTML = '';
       data.data.results.forEach(function (element) {
         outputComics(element);
       });
@@ -54366,7 +54367,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46695" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42317" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

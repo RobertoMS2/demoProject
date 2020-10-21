@@ -6,6 +6,7 @@ const url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-ons
 
 const detail = document.querySelector('#wrapper');
 const title_wrapper = document.querySelector('#title_wrapper');
+const breadcrumbs = document.querySelector('#breadcrumbs ul');
 
 function outputComic(data) {
     let item = document.createElement('div');
@@ -58,6 +59,8 @@ function outputComic(data) {
         code += '<li>' + story.name + '. Tipo: ' + story.type + '</li>';
     }); 
     code += '</ul>';
+    code += '</div>';
+    
     item.innerHTML = code;
     detail.appendChild(item);
 }
@@ -87,10 +90,26 @@ module.exports = {
         fetch(url).then(response => {
             return response.json();
         }).then(data => {
-            detail.innerHTML = '';
-            data.data.results.forEach(element => {
-                outputComic(element); 
-            });
+            if (data.code === 404) {
+                detail.innerHTML = '';
+                title_wrapper.innerHTML = '<h1 class="title"><span>Error</span></h1>';
+                detail.innerHTML = '<p>No ha sido posible obtener los datos del comic seleccionado.</p>';
+            } else {
+                /* Datos de las migas de pan */
+                let characterLi = document.createElement('li');
+                characterLi.innerHTML = '<a href="./comic.html">Comics</a>';
+                breadcrumbs.appendChild(characterLi);
+                let currentLi = document.createElement('li');
+                currentLi.setAttribute('class', 'active');
+                currentLi.innerHTML = data.data.results[0].title;
+                breadcrumbs.appendChild(currentLi);
+
+                /* Datos del comic elegido */
+                detail.innerHTML = '';
+                data.data.results.forEach(element => {
+                    outputComic(element); 
+                });
+            }
         }).catch(error => {
             console.error(JSON.stringify(error));
         });
@@ -104,7 +123,17 @@ module.exports = {
         fetch(url).then(response => {
             return response.json();
         }).then(data => {
+            /* Datos de las migas de pan */
+            let currentLi = document.createElement('li');
+            currentLi.setAttribute('class', 'active');
+            currentLi.innerHTML = 'Comics';
+            breadcrumbs.appendChild(currentLi);
+
+            /* Datos del título */
             title_wrapper.innerHTML = '<h1 class="title"><span>Comics</span></h1>';
+
+            /* Datos de los comics elegido */
+            detail.innerHTML = '';
             data.data.results.forEach(element => {
                 outputComics(element);
             });

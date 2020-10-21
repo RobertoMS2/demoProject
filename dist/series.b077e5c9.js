@@ -54234,6 +54234,7 @@ var url_serie = 'https://gateway.marvel.com:443/v1/public/series/';
 var url_series = 'https://gateway.marvel.com:443/v1/public/series?orderBy=modified&limit=18&apikey=' + constants.public_key;
 var detail = document.querySelector('#wrapper');
 var title_wrapper = document.querySelector('#title_wrapper');
+var breadcrumbs = document.querySelector('#breadcrumbs ul');
 
 function outputSerie(data) {
   var item = document.createElement('div');
@@ -54319,6 +54320,16 @@ module.exports = {
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
+      /* Datos de las migas de pan */
+      var characterLi = document.createElement('li');
+      characterLi.innerHTML = '<a href="./series.html">Series</a>';
+      breadcrumbs.appendChild(characterLi);
+      var currentLi = document.createElement('li');
+      currentLi.setAttribute('class', 'active');
+      currentLi.innerHTML = data.data.results[0].title;
+      breadcrumbs.appendChild(currentLi);
+      /* Datos de la serie elegida */
+
       detail.innerHTML = '';
       data.data.results.forEach(function (element) {
         outputSerie(element);
@@ -54336,7 +54347,17 @@ module.exports = {
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
+      /* Datos de las migas de pan */
+      var currentLi = document.createElement('li');
+      currentLi.setAttribute('class', 'active');
+      currentLi.innerHTML = 'Series';
+      breadcrumbs.appendChild(currentLi);
+      /* Datos del título */
+
       title_wrapper.innerHTML = '<h1 class="title"><span>Series</span></h1>';
+      /* Datos del personaje elegido */
+
+      detail.innerHTML = '';
       data.data.results.forEach(function (element) {
         outputSeries(element);
       });
@@ -54385,7 +54406,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46695" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42317" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

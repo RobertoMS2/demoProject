@@ -54234,6 +54234,7 @@ var url_comic = 'https://gateway.marvel.com:443/v1/public/comics/';
 var url_comics = 'https://gateway.marvel.com:443/v1/public/comics?orderBy=-onsaleDate&limit=24&apikey=' + constants.public_key;
 var detail = document.querySelector('#wrapper');
 var title_wrapper = document.querySelector('#title_wrapper');
+var breadcrumbs = document.querySelector('#breadcrumbs ul');
 
 function outputComic(data) {
   var item = document.createElement('div');
@@ -54294,6 +54295,7 @@ function outputComic(data) {
     code += '<li>' + story.name + '. Tipo: ' + story.type + '</li>';
   });
   code += '</ul>';
+  code += '</div>';
   item.innerHTML = code;
   detail.appendChild(item);
 }
@@ -54324,10 +54326,26 @@ module.exports = {
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
-      detail.innerHTML = '';
-      data.data.results.forEach(function (element) {
-        outputComic(element);
-      });
+      if (data.code === 404) {
+        detail.innerHTML = '';
+        title_wrapper.innerHTML = '<h1 class="title"><span>Error</span></h1>';
+        detail.innerHTML = '<p>No ha sido posible obtener los datos del comic seleccionado.</p>';
+      } else {
+        /* Datos de las migas de pan */
+        var characterLi = document.createElement('li');
+        characterLi.innerHTML = '<a href="./comic.html">Comics</a>';
+        breadcrumbs.appendChild(characterLi);
+        var currentLi = document.createElement('li');
+        currentLi.setAttribute('class', 'active');
+        currentLi.innerHTML = data.data.results[0].title;
+        breadcrumbs.appendChild(currentLi);
+        /* Datos del comic elegido */
+
+        detail.innerHTML = '';
+        data.data.results.forEach(function (element) {
+          outputComic(element);
+        });
+      }
     }).catch(function (error) {
       console.error(JSON.stringify(error));
     });
@@ -54341,7 +54359,17 @@ module.exports = {
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
+      /* Datos de las migas de pan */
+      var currentLi = document.createElement('li');
+      currentLi.setAttribute('class', 'active');
+      currentLi.innerHTML = 'Comics';
+      breadcrumbs.appendChild(currentLi);
+      /* Datos del título */
+
       title_wrapper.innerHTML = '<h1 class="title"><span>Comics</span></h1>';
+      /* Datos de los comics elegido */
+
+      detail.innerHTML = '';
       data.data.results.forEach(function (element) {
         outputComics(element);
       });
@@ -54390,7 +54418,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46695" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42317" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -28,7 +28,7 @@ function outputCharacters(data) {
     character.setAttribute('class', 'characterItem');
     let code = '';
     code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
-    code += '<h3>' + data.name + '</h3>';
+    code += '<p><a href="./character.html?id=' + data.id + '">' + data.name + '</a></p>';
     character.innerHTML = code;
     charactersList.appendChild(character);
 }
@@ -58,6 +58,7 @@ module.exports = {
         fetch(url).then(response => {
             return response.json();
         }).then(data => {
+            latestContent.innerHTML = '';
             data.data.results.forEach(element => {
                 outputComics(element);
             });

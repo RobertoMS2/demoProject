@@ -6,6 +6,7 @@ const url_series = 'https://gateway.marvel.com:443/v1/public/series?orderBy=modi
 
 const detail = document.querySelector('#wrapper');
 const title_wrapper = document.querySelector('#title_wrapper');
+const breadcrumbs = document.querySelector('#breadcrumbs ul');
 
 function outputSerie(data) {
     let item = document.createElement('div');
@@ -86,6 +87,16 @@ module.exports = {
         fetch(url).then(response => {
             return response.json();
         }).then(data => {
+            /* Datos de las migas de pan */
+            let characterLi = document.createElement('li');
+            characterLi.innerHTML = '<a href="./series.html">Series</a>';
+            breadcrumbs.appendChild(characterLi);
+            let currentLi = document.createElement('li');
+            currentLi.setAttribute('class', 'active');
+            currentLi.innerHTML = data.data.results[0].title;
+            breadcrumbs.appendChild(currentLi);
+
+            /* Datos de la serie elegida */
             detail.innerHTML = '';
             data.data.results.forEach(element => {
                 outputSerie(element); 
@@ -103,7 +114,17 @@ module.exports = {
         fetch(url).then(response => {
             return response.json();
         }).then(data => {
+            /* Datos de las migas de pan */
+            let currentLi = document.createElement('li');
+            currentLi.setAttribute('class', 'active');
+            currentLi.innerHTML = 'Series';
+            breadcrumbs.appendChild(currentLi);
+
+            /* Datos del título */
             title_wrapper.innerHTML = '<h1 class="title"><span>Series</span></h1>';
+
+            /* Datos del personaje elegido */
+            detail.innerHTML = '';
             data.data.results.forEach(element => {
                 outputSeries(element);
             });
