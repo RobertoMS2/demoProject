@@ -57,6 +57,8 @@ Para elaborar las versiones de producción podéis lanzar el script de build
 npm run build
 ```
 
+Puedes consultar una versión publicada del proyecto en: [netlify](https://elegant-lovelace-02dfa3.netlify.app/)
+
 ## Construido con 🛠️
 
 Las herramientas utilizadas son las siguientes:
