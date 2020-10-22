@@ -62,7 +62,7 @@ img {
 
 .col {
   padding: 0px 1.04167% 0 1.04167%; 
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 
 .col-1 {
@@ -460,4 +460,118 @@ h1 a {
 /* loading */
 #loading {
   margin: 0 auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 1400px){
+
+  #mainNav {
+    left: 1%;
+  }
+
+  .title {
+    max-width: 900px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+}
+
+@media screen and (max-width: 1050px){
+
+  h1.title {
+    line-height: 4rem;
+  }
+
+  #about .col-8,
+  #about .col-2 {
+    width: 100%;
+  }
+
+  #about span {
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .title {
+    max-width: 600px;
+  }
+
+  .container {
+    max-width: 600px;
+  }
+
+  .comicItem.col.col-3,
+  .comicItem.col.col-4 {
+    width: 47.91666666666667%;
+  }
+
+  .characterItem {
+    width: 50%;
+  }
+
+  .innerWeb .col-4,
+  .innerWeb .col-8 {
+    width: 97.91666666666667%;
+  }
+}
+
+@media screen and (max-width: 720px){
+  .title {
+    max-width: 400px;
+  }
+
+  .container {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 520px){
+
+  .title {
+    max-width: 300px;
+  }
+
+  .container {
+    max-width: 300px;
+  }
+
+  .comicItem.col.col-3,
+  .comicItem.col.col-4 {
+    width: 97.91666666666667%;
+  }
+
+  .characterItem {
+    width: 100%;
+  }
+
+  .innerWeb .container, .innerWeb .title {
+    max-width: 100%;
+  }
+
+  #breadcrumbs ul {
+    display: block;
+  }
+
+  #breadcrumbs a {
+    width: 100%;
+    display: block;
+  }
+
+  #top p {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 410px){
+  .title {
+    max-width: 200px;
+  }
+
+  .container {
+    max-width: 200px;
+  }
 }
