@@ -462,6 +462,32 @@ h1 a {
   margin: 0 auto;
 }
 
+/* Read more */
+.readMore a {
+  display: block;
+    color: var(--primary-black);
+    background-color: var(--primary-red);
+    width: 200px;
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s 0s ease-in-out;
+    border-bottom: 2px solid var(--primary-black);
+    border-right: 2px solid var(--primary-black);
+    border-top: 2px solid var(--primary-red);
+    border-left: 2px solid var(--primary-red);
+}
+
+  .readMore a:hover {
+    border-bottom: 2px solid var(--primary-red);
+    border-right: 2px solid var(--primary-red);
+    border-top: 2px solid var(--primary-black);
+    border-left: 2px solid var(--primary-black);
+    color: var(--primary-white);
+    background-color: var(--primary-black);
+  } 
+
 /* Responsive */
 @media screen and (max-width: 1400px){
 
