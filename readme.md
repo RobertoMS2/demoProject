@@ -1,10 +1,12 @@
-# Título del Proyecto
+# Marvel wallet
 
-_Acá va un párrafo que describa lo que es el proyecto_
+Marvel wallet es un proyecto en crecimiento que nace con la idea de crear una webapp que permita gestionar tu colección de comics marvel. En esta primera versión nuestra intención en crear una demostración del uso del Api de Marvel, cómo se interactúa con este api y cómo se muestran los resultados de las consultas recurriendo solo a código JS sin recurrir a framework alguno.
+
+Versiones posteriores del proyecto deberán integrar el uso de esta API con un sistema de BBDD que permita relacionar nuestra propia colección con la información facilitada por la propia Marvel. Las versiones que estén por venir podrán estar planteadas en frameworks reconocidos como Angular JS o React.
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+_Al tratarse de una versión preliminar hemos decidido disponer de un boilerplate limpio basado en [Parcel](https://parceljs.org/). Basta con que descargues el código. Lo instales con node y lo despliegues para empezar a probar y desarrollar._
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
