@@ -13,7 +13,7 @@ function outputSerie(data) {
     item.setAttribute('class', 'serieDetail container col col-12-np');
     let code = '';
     code += '<div class="col col-4">';
-    code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+    code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del primer comic de la serie: ' + data.title + '"></div>';
     code += '</div>';
     code += '<div class="col col-8">';
     title_wrapper.innerHTML = '<h1 class="title"><span>' + data.title + '</span></h1>';
@@ -66,7 +66,7 @@ function outputSeries(data) {
     let item = document.createElement('div');
     item.setAttribute('class', 'comicItem col col-4');
     let code = '';
-    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del primer comic de la serie: ' + data.title + '"></div>';
     code += '<h3>' + data.title + '</h3>';
     if (data.description !== null) {
         code += '<p>' + data.description + '</p>';

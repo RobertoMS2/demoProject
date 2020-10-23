@@ -13,7 +13,7 @@ function outputComics(data) {
     let item = document.createElement('div');
     item.setAttribute('class', 'comicItem col col-3');
     let code = '';
-    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del comic: ' + data.title + '"></div>';
     code += '<h3>' + data.title + '</h3>';
     if (data.description !== null) {
         code += '<p>' + data.description + '</p>';
@@ -27,7 +27,7 @@ function outputCharacters(data) {
     let character = document.createElement('div');
     character.setAttribute('class', 'characterItem');
     let code = '';
-    code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+    code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Foto del personaje: ' + data.name + '"></div>';
     code += '<p><a href="./character.html?id=' + data.id + '">' + data.name + '</a></p>';
     character.innerHTML = code;
     charactersList.appendChild(character);
@@ -37,7 +37,7 @@ function outputSeries(data) {
     let item = document.createElement('div');
     item.setAttribute('class', 'comicItem col col-4');
     let code = '';
-    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del primer comic de la serie: ' + data.title + '"></div>';
     code += '<h3>' + data.title + '</h3>';
     if (data.description !== null) {
         code += '<p>' + data.description + '</p>';

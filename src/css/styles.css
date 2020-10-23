@@ -458,7 +458,7 @@ h1 a {
   }
 
 /* loading */
-#loading {
+.loading {
   margin: 0 auto;
 }
 

@@ -13,7 +13,7 @@ function outputCharacter(data) {
     item.setAttribute('class', 'comicDetail container col col-12-np');
     let code = '';
     code += '<div class="col col-4">';
-    code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+    code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Imagen de ' + data.name + '"></div>';
     code += '</div>';
     code += '<div class="col col-8">';
     title_wrapper.innerHTML = '<h1 class="title"><span>' + data.name + '</span></h1>';
@@ -61,7 +61,7 @@ function outputCharacters(data) {
     let character = document.createElement('div');
     character.setAttribute('class', 'characterItem');
     let code = '';
-    code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '"></div>';
+    code += '<div class="r-box r-box-1_2"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Imagen de ' + data.name + '"></div>';
     code += '<p><a href="./character.html?id=' + data.id + '">' + data.name + '</a></p>';
     character.innerHTML = code;
     detail.appendChild(character);
