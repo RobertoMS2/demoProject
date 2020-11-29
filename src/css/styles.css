@@ -39,9 +39,18 @@ img {
 }
 
 /* Comunes a todas las columnas */
-.title {
-  max-width: 1200px;
+.wrapper-contents {
+  max-width: 1300px;
   margin: 0 auto;
+  background: var(--primary-white);
+  top: -50px;
+  position: relative;
+  padding: 1rem;
+  box-sizing: border-box;
+  padding-top: 0;
+}
+
+.title {
   overflow: auto;
   padding: 2rem 0;
 }
@@ -55,7 +64,6 @@ img {
 
 .container {
   display: flex;
-  max-width: 1200px;
   margin: 1rem auto;
   flex-wrap: wrap;
 }
@@ -192,6 +200,10 @@ img {
 	padding-top: 42.85714285714286%;
 }
 
+.r-box-65_23:before{
+  padding-top: 25.9375%;
+}
+
 .r-box-col1:before {
 	padding-top: 73.71794871794872%;
 }
@@ -211,6 +223,10 @@ img {
     top: 50%;
 }
 
+.clip-chat {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 75% 90%, 75% 100%, 61% 90%, 0 90%);
+}
+
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -228,20 +244,12 @@ h1 a {
   text-decoration: none;
 }
 
-#top {
-  background-image: url(../img/header.jpg);
-  height: 70vh;
-  background-size: 100%;
-}
-
 .innerWeb #top {
   height: auto;
 }
 
   #top p {
     text-align: center;
-    transform: translateY(-50%);
-    top: 35%;
     position: relative;
     font-size: 4rem;
     text-shadow: var(--primary-red) 2px 2px;
@@ -258,6 +266,7 @@ h1 a {
     top: 0;
     width: 100%;
     text-align: center;
+    z-index: 1;
   }
 
   #top #bar h1 {
@@ -296,9 +305,9 @@ h1 a {
 #mainNav {
   position: fixed;
   left: 2%;
-  top: 40%;
-  transform: translateY(-50%);
+  top: 80px;
   display: block;
+  z-index: 2;
 }
 
   #mainNav ul {
@@ -357,14 +366,14 @@ h1 a {
 }
 
 .comicItem h3 {
-  background: var(--primary-black);
-  padding: 1rem;
-  font-size: 1.2rem;
-  color: var(--primary-white);
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: var(--primary-black);
   position: relative;
   top: 0;
   left: 0;
   margin: 0;
+  margin-bottom: 1rem;
 }
 
 .comicItem a {
@@ -377,6 +386,9 @@ h1 a {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s 0s ease-in-out;
+
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+  padding-left: 1rem;
 }
 
 .comicItem a span {
@@ -393,10 +405,6 @@ h1 a {
   .comicItem a:hover span {
     display: block
   }
-
-.listWrapper {
-  background-color: var(--primary-black);
-}
 
 .characterItem {
   width: 20%;
@@ -426,8 +434,8 @@ h1 a {
 
 /* Breadcrubs */
 #breadcrumbs {
-  margin: 8rem auto 0 auto;
-  max-width: 1200px;
+  margin: 0rem;
+  padding-top: 1rem;
 }
 
   #breadcrumbs ul {
@@ -488,6 +496,30 @@ h1 a {
     background-color: var(--primary-black);
   } 
 
+/* Imágenes */
+.heading-div {
+  margin-top: 64px;
+}
+
+.heading-img {
+  width: 100%;
+}
+
+.heading-img img {
+  width: 100%;
+}
+
+/* About */
+#about .listWrapper {
+  background: var(--primary-black);
+}
+
+#about .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 /* Responsive */
 @media screen and (max-width: 1400px){
 
@@ -495,20 +527,9 @@ h1 a {
     left: 1%;
   }
 
-  .title {
+  .wrapper-contents,
+  #about .container {
     max-width: 900px;
-  }
-
-  .container {
-    max-width: 900px;
-  }
-
-}
-
-@media screen and (max-width: 1050px){
-
-  h1.title {
-    line-height: 4rem;
   }
 
   #about .col-8,
@@ -521,12 +542,16 @@ h1 a {
     margin: 0 auto;
     display: block;
   }
+}
 
-  .title {
-    max-width: 600px;
+@media screen and (max-width: 1050px){
+
+  h1.title {
+    line-height: 4rem;
   }
 
-  .container {
+  .wrapper-contents,
+  #about .container {
     max-width: 600px;
   }
 
@@ -546,22 +571,16 @@ h1 a {
 }
 
 @media screen and (max-width: 720px){
-  .title {
-    max-width: 400px;
-  }
-
-  .container {
+  .wrapper-contents,
+  #about .container {
     max-width: 400px;
   }
 }
 
 @media screen and (max-width: 520px){
 
-  .title {
-    max-width: 300px;
-  }
-
-  .container {
+  .wrapper-contents,
+  #about .container {
     max-width: 300px;
   }
 
@@ -593,11 +612,8 @@ h1 a {
 }
 
 @media screen and (max-width: 410px){
-  .title {
-    max-width: 200px;
-  }
-
-  .container {
+  .wrapper-contents,
+  #about .container {
     max-width: 200px;
   }
 }

@@ -21,24 +21,29 @@
       <h1><a href="/index.html" title="Página de inicio de Marvel Wallet"><span class="marvel">Marvel</span><span class="studios">wallet</span></a></h1>
     </div>
   </header>
-  <div id="breadcrumbs">
-    <nav>
-      <ul>
-        <li><a href="./index.html"><i class="fas fa-home"></i>Inicio</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <div id="title_wrapper"></div>
-  <div id="wrapper" class="container">
-    <div class="loading">
-      <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+  <picture class="heading-img">
+    <source media="(min-width:1920px)" srcset="./img/characters_big.webp">
+    <source media="(min-width:1024px)" srcset="./img/characters_med.webp">
+      <img src="./img/characters_small.webp" alt="Fondo de miles morales">
+  </picture>
+  <div class="wrapper-contents">
+    <div id="breadcrumbs">
+      <nav>
+        <ul>
+          <li><a href="./index.html"><i class="fas fa-home"></i>Inicio</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="title_wrapper"></div>
+    <div id="wrapper" class="container">
+      <div class="loading">
+        <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+      </div>
     </div>
   </div>
-
+  
   <footer>
     <section id="about">
-      <h2 class="title"><span>Acerca de</span></h2>
       <div class="listWrapper color-primary-white addPadding">
         <div class="container">
           <div class="col col-2">

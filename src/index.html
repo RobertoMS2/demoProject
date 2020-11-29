@@ -20,7 +20,16 @@
     <div class="bg-color-primary-black" id="bar">
       <h1><span class="marvel">Marvel</span><span class="studios">wallet</span></h1>
     </div>
-    <p>Latest comics and news about Marvel Universe</p>
+    <div>
+      <div class="heading-div">
+        <picture class="heading-img">
+          <source media="(min-width:1920px)" srcset="./img/portada_big.webp">
+          <source media="(min-width:1024px)" srcset="./img/portada_med.webp">
+            <img src="./img/portada_small.webp" alt="Fondo de miles morales">
+        </picture>
+      </div>
+      <p>Latest comics and news about Marvel Universe</p>
+    </div>
   </header>
   <nav id="mainNav">
     <ul>
@@ -33,41 +42,61 @@
   </nav>
   <div id="wrapper">
     <section id="latest">
-      <h2 class="title"><span>Últimos comics</span></h2>
-      <div id="latestContent" class="container">
-        <div class="loading">
-          <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+      <picture class="heading-img">
+        <source media="(min-width:1920px)" srcset="./img/comics_big.webp">
+        <source media="(min-width:1024px)" srcset="./img/comics_med.webp">
+          <img src="./img/comics_small.webp" alt="Fondo de miles morales">
+      </picture>
+      <div class="wrapper-contents">
+        <h2 class="title"><span>Últimos comics</span></h2>
+        <div id="latestContent" class="container">
+          <div class="loading">
+            <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+          </div>
         </div>
-      </div>
-      <div class="container readMore">
-        <a href="./comic.html" class="readMore"><i class="far fa-plus-square"></i> Ver más Comics</a>
+        <div class="container readMore">
+          <a href="./comic.html" class="readMore"><i class="far fa-plus-square"></i> Ver más Comics</a>
+        </div>
       </div>
     </section>
     <section id="characters">
-      <h2 class="title"><span>Personajes</span></h2>
-      <div class="listWrapper">
-        <div id="charactersList" class="container">
-          <div class="loading">
-            <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+      <picture class="heading-img">
+        <source media="(min-width:1920px)" srcset="./img/characters_big.webp">
+        <source media="(min-width:1024px)" srcset="./img/characters_med.webp">
+          <img src="./img/characters_small.webp" alt="Fondo de miles morales">
+      </picture>
+      <div class="wrapper-contents">
+        <h2 class="title"><span>Personajes</span></h2>
+        <div class="listWrapper">
+          <div id="charactersList" class="container">
+            <div class="loading">
+              <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="series">
-      <h2 class="title"><span>Series</span></h2>
-      <div id="latestSeries" class="container">
-        <div class="loading">
-          <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+      <picture class="heading-img">
+        <source media="(min-width:1920px)" srcset="./img/series_big.webp">
+        <source media="(min-width:1024px)" srcset="./img/series_med.webp">
+          <img src="./img/series_small.webp" alt="Fondo de miles morales">
+      </picture>
+      <div class="wrapper-contents">
+        <h2 class="title"><span>Series</span></h2>
+        <div id="latestSeries" class="container">
+          <div class="loading">
+            <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+          </div>
         </div>
-      </div>
-      <div class="container readMore">
-        <a href="./series.html" class="readMore"><i class="far fa-plus-square"></i> Ver más Series</a>
+        <div class="container readMore">
+          <a href="./series.html" class="readMore"><i class="far fa-plus-square"></i> Ver más Series</a>
+        </div>
       </div>
     </section>
   </div>
   <footer>
     <section id="about">
-      <h2 class="title"><span>Acerca de</span></h2>
       <div class="listWrapper color-primary-white addPadding">
         <div class="container">
           <div class="col col-2">

@@ -1,0 +1,621 @@
+:root {
+  --primary-red: #ec1d24;
+  --primary-black: #202020;
+  --secundary-black: #45505b;
+  --primary-white: #fefefe;
+  --secundary-white: #efefef;
+}
+
+.color-primary-red {
+  color: var(--primary-red);
+}
+
+.color-primary-black {
+  color: var(--primary-black);
+}
+
+.color-primary-white {
+  color: var(--primary-white);
+}
+
+.bg-color-primary-red {
+  background-color: var(--primary-red);
+}
+
+.bg-color-primary-black {
+  background-color: var(--primary-black);
+}
+
+.bg-color-primary-white {
+  background-color: var(--primary-white);
+}
+
+.addPadding {
+  padding: 2rem 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Comunes a todas las columnas */
+.wrapper-contents {
+  max-width: 1300px;
+  margin: 0 auto;
+  background: var(--primary-white);
+  top: -50px;
+  position: relative;
+  padding: 1rem;
+  box-sizing: border-box;
+  padding-top: 0;
+}
+
+.title {
+  overflow: auto;
+  padding: 2rem 0;
+}
+
+.title span {
+  border-left: 2px solid var(--primary-red);
+  border-bottom: 2px solid var(--primary-black);
+  padding: 0.5rem;
+  padding-right: 3rem;
+}
+
+.container {
+  display: flex;
+  margin: 1rem auto;
+  flex-wrap: wrap;
+}
+
+.col {
+  padding: 0px 1.04167% 0 1.04167%; 
+  box-sizing: content-box;
+}
+
+.col-1 {
+  width: 6.25%; }
+
+.col-2 {
+  width: 14.58333333333333%; }
+
+.col-3 {
+  width: 22.91666666666667%; }
+
+.col-4 {
+  width: 31.25%; }
+
+.col-5 {
+  width: 39.58333333333333%; }
+
+.col-6 {
+  width: 47.91666666666667%; }
+
+.col-7 {
+  width: 56.25%; }
+
+.col-8 {
+  width: 64.58333333333333%; }
+
+.col-9 {
+  width: 72.91666666666667%; }
+
+.col-10 {
+  width: 81.25%; }
+
+.col-11 {
+  width: 89.58333333333333%; }
+
+.col-12 {
+  width: 97.91666666666667%; }
+
+/* Versiones sin padding */
+.col-1-np {
+  width: 8.333333333333332%;
+  padding: 0px; }
+
+.col-2-np {
+  width: 16.66666666666666%;
+  padding: 0px; }
+
+.col-3-np {
+  width: 24.99999999999999%;
+  padding: 0px; }
+
+.col-4-np {
+  width: 33.33333333333333%;
+  padding: 0px; }
+
+.col-5-np {
+  width: 41.66666666666666%;
+  padding: 0px; }
+
+.col-6-np {
+  width: 50%;
+  padding: 0px; }
+
+.col-7-np {
+  width: 58.33333333333333%;
+  padding: 0px; }
+
+.col-8-np {
+  width: 66.66666666666666%;
+  padding: 0px; }
+
+.col-9-np {
+  width: 74.99999999999999%;
+  padding: 0px; }
+
+.col-10-np {
+  width: 83.33333333333333%;
+  padding: 0px; }
+
+.col-11-np {
+  width: 91.66666666666666%;
+  padding: 0px; }
+
+.col-12-np {
+  width: 100%;
+  padding: 0px; }
+  
+/* RESPONSIVE BOXES */
+.r-box{
+	position: relative;
+  width: auto;
+  overflow: hidden;
+  background-color: var(--secundary-white);
+}
+
+.r-box:before{
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+
+.r-box-1_1:before{
+	padding-top: 100%;
+}
+
+.r-box-2_1:before{
+	padding-top: 50%;
+}
+
+.r-box-3_2:before{
+	padding-top: 66.66666666666667%;
+}
+
+.r-box-1_2:before{
+	padding-top: 200%;
+}
+
+.r-box4_3:before{
+	padding-top: 75%;
+}
+
+.r-box-16_9:before{
+	padding-top: 56.25%;
+}
+
+.r-box-21_9:before{
+	padding-top: 42.85714285714286%;
+}
+
+.r-box-65_23:before{
+  padding-top: 25.9375%;
+}
+
+.r-box-col1:before {
+	padding-top: 73.71794871794872%;
+}
+
+.r-box-col2:before {
+	padding-top: 36.85897435897436%;
+}
+
+.r-box img {
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.clip-chat {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 75% 90%, 75% 100%, 61% 90%, 0 90%);
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--primary-black);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Marvel', sans-serif;
+  color: var(--secundary-black);
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+.innerWeb #top {
+  height: auto;
+}
+
+  #top p {
+    text-align: center;
+    position: relative;
+    font-size: 4rem;
+    text-shadow: var(--primary-red) 2px 2px;
+    font-family: 'marvel';
+    margin: 3rem 4rem;
+  }
+
+  #top > div {
+    padding: 1rem 0;
+  }
+
+  #bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+  }
+
+  #top #bar h1 {
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s 0s ease-in-out;
+  }
+
+    #bar .marvel {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--primary-white);
+      background: var(--primary-red);
+      padding: 0.3rem 1rem;
+      display: inline-block;
+      width: auto;
+    }
+
+    #bar .studios {
+      border-bottom: 2px solid var(--primary-white);
+      border-top: 2px solid var(--primary-white);
+      padding: 0.2rem 1rem;
+      box-sizing: border-box;
+      text-transform: uppercase;
+      color: var(--primary-white);
+    }
+
+    #bar.sticky {
+      z-index: 9;
+    }
+  
+    #top #bar.sticky h1 {
+      font-size: 1.2rem;
+    }
+
+#mainNav {
+  position: fixed;
+  left: 2%;
+  top: 80px;
+  display: block;
+  z-index: 2;
+}
+
+  #mainNav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+    #mainNav ul li {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    #mainNav ul a {
+      display: flex;
+      align-items: center;
+      border-radius: 48px;
+      background: var(--primary-red);
+      color: var(--primary-black);
+      height: 48px;
+      width: 48px;
+      line-height: 48px;
+      transition: all 0.25s 0s ease-in-out;
+      overflow: hidden;
+      margin: 1rem 0;
+      padding-left: 0.75rem;
+      box-sizing: border-box;
+    }
+
+    #mainNav ul a span {
+      display: none;
+      float: left;
+      padding: 0 1rem;
+    }
+
+    #mainNav ul a i {
+      font-size: 1.2rem;
+      float: left;
+      text-align: center;
+      line-height: 48px;
+    }
+
+    #mainNav ul a:hover{
+      width: 200px;
+      background: var(--primary-black);
+      color: var(--primary-white);
+    }
+
+      #mainNav ul a:hover span {
+        display: block;
+      }
+  
+/* Noticias portada */
+.comicItem {
+  margin-bottom: 2rem;
+}
+
+.comicItem h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: var(--primary-black);
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.comicItem a {
+  display: block;
+  color: var(--primary-black);
+  background-color: var(--primary-red);
+  width: 100px;
+  text-align: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s 0s ease-in-out;
+
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+  padding-left: 1rem;
+}
+
+.comicItem a span {
+  display: none;
+  float: left;
+}
+
+  .comicItem a:hover {
+    width: 140px;
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+  }
+
+  .comicItem a:hover span {
+    display: block
+  }
+
+.characterItem {
+  width: 20%;
+  position: relative;
+}
+
+  .characterItem p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: var(--primary-red);
+    margin: 0;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+    .characterItem p a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--primary-white);
+    }
+
+.innerWeb #title_wrapper {
+  margin-top: 3rem;
+}
+
+/* Breadcrubs */
+#breadcrumbs {
+  margin: 0rem;
+  padding-top: 1rem;
+}
+
+  #breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  #breadcrumbs li {
+    padding: 1rem 1.5rem;
+    background: var(--primary-black);
+    border-right: 1px solid var(--secundary-black);
+    color: var(--primary-white);
+  }
+
+  #breadcrumbs i {
+    padding-right: 1rem;
+  }
+
+  #breadcrumbs a {
+    text-decoration: none;
+    color: var(--primary-white);
+  }
+
+  #breadcrumbs li.active {
+    border-bottom: 2px solid var(--primary-red);
+  }
+
+/* loading */
+.loading {
+  margin: 0 auto;
+}
+
+/* Read more */
+.readMore a {
+  display: block;
+    color: var(--primary-black);
+    background-color: var(--primary-red);
+    width: 200px;
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s 0s ease-in-out;
+    border-bottom: 2px solid var(--primary-black);
+    border-right: 2px solid var(--primary-black);
+    border-top: 2px solid var(--primary-red);
+    border-left: 2px solid var(--primary-red);
+}
+
+  .readMore a:hover {
+    border-bottom: 2px solid var(--primary-red);
+    border-right: 2px solid var(--primary-red);
+    border-top: 2px solid var(--primary-black);
+    border-left: 2px solid var(--primary-black);
+    color: var(--primary-white);
+    background-color: var(--primary-black);
+  } 
+
+/* Imágenes */
+.heading-div {
+  margin-top: 64px;
+}
+
+.heading-img {
+  width: 100%;
+}
+
+.heading-img img {
+  width: 100%;
+}
+
+/* About */
+#about .listWrapper {
+  background: var(--primary-black);
+}
+
+#about .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 1400px){
+
+  #mainNav {
+    left: 1%;
+  }
+
+  .wrapper-contents,
+  #about .container {
+    max-width: 900px;
+  }
+
+  #about .col-8,
+  #about .col-2 {
+    width: 100%;
+  }
+
+  #about span {
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1050px){
+
+  h1.title {
+    line-height: 4rem;
+  }
+
+  .wrapper-contents,
+  #about .container {
+    max-width: 600px;
+  }
+
+  .comicItem.col.col-3,
+  .comicItem.col.col-4 {
+    width: 47.91666666666667%;
+  }
+
+  .characterItem {
+    width: 50%;
+  }
+
+  .innerWeb .col-4,
+  .innerWeb .col-8 {
+    width: 97.91666666666667%;
+  }
+}
+
+@media screen and (max-width: 720px){
+  .wrapper-contents,
+  #about .container {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 520px){
+
+  .wrapper-contents,
+  #about .container {
+    max-width: 300px;
+  }
+
+  .comicItem.col.col-3,
+  .comicItem.col.col-4 {
+    width: 97.91666666666667%;
+  }
+
+  .characterItem {
+    width: 100%;
+  }
+
+  .innerWeb .container, .innerWeb .title {
+    max-width: 100%;
+  }
+
+  #breadcrumbs ul {
+    display: block;
+  }
+
+  #breadcrumbs a {
+    width: 100%;
+    display: block;
+  }
+
+  #top p {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 410px){
+  .wrapper-contents,
+  #about .container {
+    max-width: 200px;
+  }
+}
+
+/*# sourceMappingURL=/styles.b61e60ae.css.map */
