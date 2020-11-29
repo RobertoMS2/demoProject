@@ -54299,7 +54299,7 @@ function outputSeries(data) {
   item.setAttribute('class', 'comicItem col col-4');
   var code = '';
   code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del primer comic de la serie: ' + data.title + '"></div>';
-  code += '<h3>' + data.title + '</h3>';
+  code += '<h2>' + data.title + '</h2>';
 
   if (data.description !== null) {
     code += '<p>' + data.description + '</p>';
