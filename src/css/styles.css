@@ -325,8 +325,8 @@ h1 a {
       display: flex;
       align-items: center;
       border-radius: 48px;
-      background: var(--primary-red);
-      color: var(--primary-black);
+      background: var(--primary-black);
+      color: var(--primary-white);
       height: 48px;
       width: 48px;
       line-height: 48px;
@@ -379,13 +379,14 @@ h1 a {
 .comicItem a {
   display: block;
   color: var(--primary-black);
-  background-color: var(--primary-red);
+  background-color: var(--primary-white);
   width: 100px;
   text-align: center;
   padding: 0.5rem;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s 0s ease-in-out;
+  border: 1px solid var(--primary-red);
 
   clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
   padding-left: 1rem;
@@ -415,7 +416,7 @@ h1 a {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: var(--primary-red);
+    background: var(--primary-black);
     margin: 0;
     padding: 1rem 0;
     text-align: center;
@@ -473,18 +474,18 @@ h1 a {
 /* Read more */
 .readMore a {
   display: block;
-    color: var(--primary-black);
-    background-color: var(--primary-red);
-    width: 200px;
-    text-align: center;
-    padding: 0.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s 0s ease-in-out;
-    border-bottom: 2px solid var(--primary-black);
-    border-right: 2px solid var(--primary-black);
-    border-top: 2px solid var(--primary-red);
-    border-left: 2px solid var(--primary-red);
+  color: var(--primary-black);
+  background-color: var(--primary-white);
+  width: 200px;
+  text-align: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s 0s ease-in-out;
+  border-bottom: 2px solid var(--primary-black);
+  border-right: 2px solid var(--primary-black);
+  border-top: 2px solid var(--primary-red);
+  border-left: 2px solid var(--primary-red);
 }
 
   .readMore a:hover {
