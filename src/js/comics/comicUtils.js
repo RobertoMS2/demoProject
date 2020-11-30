@@ -1,3 +1,5 @@
+import icons from "../../img/icons/*.svg";
+
 const md5 = require('crypto-js/md5');
 const constants = require('../utils/consts');
 
@@ -24,7 +26,7 @@ function outputComic(data) {
         code += '<p><b>isbn: ' + data.isbn + '</b></p>';
     }
     code += '<p><b>Fecha de venta:</b> ' + data.dates[0].date + '</p>';
-    code += '<h2>Precios</h2>';
+    code += '<h2 class="with-icon"><img src="' + icons.price + '" alt="Icono de precio" class="icon"><span>Precios</span></h2>';
     code += '<ul>';
     data.prices.forEach(price => {
         let priceName = '';
@@ -38,7 +40,7 @@ function outputComic(data) {
     code += '</ul>';
     code += '<p><b>Serie:</b>' + data.series.name + '</p>';
     if (data.creators.available > 0) {
-        code += '<h2>Autores</h2>';
+        code += '<h2 class="with-icon"><img src="' + icons.author + '" alt="Icono de autores" class="icon"><span>Autores</h2>';
         code += '<ul>';
         data.creators.items.forEach(element => {
             code += '<li>' + element.name + ' (' + element.role + ').</li>';
@@ -46,14 +48,14 @@ function outputComic(data) {
         code += '</ul>';
     }
     if (data.characters.available > 0) {
-        code += '<h2>Personajes</h2>';
+        code += '<h2 class="with-icon"><img src="' + icons.characters + '" alt="Icono de personajes" class="icon"><span>Personajes</h2>';
         code += '<ul>';
         data.characters.items.forEach(character => {
             code += '<li>' + character.name + '</li>';
         }); 
         code += '</ul>';
     }
-    code += '<h2>Historias</h2>';
+    code += '<h2 class="with-icon"><img src="' + icons.stories + '" alt="Icono de historias" class="icon"><span>Historias</h2>';
     code += '<ul>';
     data.stories.items.forEach(story => {
         code += '<li>' + story.name + '. Tipo: ' + story.type + '</li>';
@@ -69,7 +71,7 @@ function outputComics(data) {
     let item = document.createElement('div');
     item.setAttribute('class', 'comicItem col col-3');
     let code = '';
-    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del comic: ' + data.title + '"></div>';
+    code += '<div class="r-box r-box-1_1 clip-chat"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del comic: ' + data.title + '"></div>';
     code += '<h2>' + data.title + '</h2>';
     if (data.description !== null) {
         code += '<p>' + data.description + '</p>';

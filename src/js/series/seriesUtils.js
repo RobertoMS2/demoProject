@@ -1,3 +1,5 @@
+import icons from "../../img/icons/*.svg";
+
 const md5 = require('crypto-js/md5');
 const constants = require('../utils/consts');
 
@@ -23,7 +25,7 @@ function outputSerie(data) {
     code += '<li><b>Tipo:</b> ' + data.type + '</li>';
     code += '</ul>'
     if (data.creators.available > 0) {
-        code += '<h2>Creadores</h2>';
+        code += '<h2 class="with-icon"><img src="' + icons.author + '" alt="Icono de autores" class="icon"><span>Creadores</h2>';
         code += '<ul>';
         data.creators.items.forEach(element => {
             code += '<li>' + element.name + ' (' + element.role + ').</li>';
@@ -31,7 +33,7 @@ function outputSerie(data) {
         code += '</ul>';
     }
     if (data.characters.available > 0) {
-        code += '<h2>Personajes</h2>';
+        code += '<h2 class="with-icon"><img src="' + icons.characters + '" alt="Icono de personajes" class="icon"><span>Personajes</h2>';
         code += '<ul>';
         data.characters.items.forEach(character => {
             code += '<li>' + character.name + '</li>';
@@ -39,7 +41,7 @@ function outputSerie(data) {
         code += '</ul>';
     }
     if (data.stories.available > 0) {
-        code += '<h2>Historias</h2>';
+        code += '<h2 class="with-icon"><img src="' + icons.stories + '" alt="Icono de historias" class="icon"><span>Historias</h2>';
         code += '<ul>';
         data.stories.items.forEach(story => {
             code += '<li>' + story.name + '. Tipo: ' + story.type + '</li>';
@@ -47,7 +49,7 @@ function outputSerie(data) {
         code += '</ul>';
     }
     if (data.comics.available > 0) {
-        code += '<h2>Comics</h2>';
+        code += '<h2 class="with-icon"><img src="' + icons.comics + '" alt="Icono de comics" class="icon"><span>Comics</h2>';
         code += '<ul>';
         data.comics.items.forEach(comic => {
             const arr = comic.resourceURI.split('/');
@@ -66,7 +68,7 @@ function outputSeries(data) {
     let item = document.createElement('div');
     item.setAttribute('class', 'comicItem col col-4');
     let code = '';
-    code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del primer comic de la serie: ' + data.title + '"></div>';
+    code += '<div class="r-box r-box-1_1 clip-chat"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del primer comic de la serie: ' + data.title + '"></div>';
     code += '<h2>' + data.title + '</h2>';
     if (data.description !== null) {
         code += '<p>' + data.description + '</p>';

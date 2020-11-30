@@ -117,7 +117,25 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/base64-js/index.js":[function(require,module,exports) {
+})({"img/icons/author.svg":[function(require,module,exports) {
+module.exports = "/author.f75f2e29.svg";
+},{}],"img/icons/characters.svg":[function(require,module,exports) {
+module.exports = "/characters.44946bbb.svg";
+},{}],"img/icons/comics.svg":[function(require,module,exports) {
+module.exports = "/comics.0aecf171.svg";
+},{}],"img/icons/price.svg":[function(require,module,exports) {
+module.exports = "/price.b141e4df.svg";
+},{}],"img/icons/stories.svg":[function(require,module,exports) {
+module.exports = "/stories.0f1ed267.svg";
+},{}],"img/icons/*.svg":[function(require,module,exports) {
+module.exports = {
+  "author": require("./author.svg"),
+  "characters": require("./characters.svg"),
+  "comics": require("./comics.svg"),
+  "price": require("./price.svg"),
+  "stories": require("./stories.svg")
+};
+},{"./author.svg":"img/icons/author.svg","./characters.svg":"img/icons/characters.svg","./comics.svg":"img/icons/comics.svg","./price.svg":"img/icons/price.svg","./stories.svg":"img/icons/stories.svg"}],"../node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -54226,6 +54244,12 @@ module.exports = {
   private_key: '09b155ea7febdbd215169af859ab76c676ae1fec'
 };
 },{}],"js/comics/comicUtils.js":[function(require,module,exports) {
+"use strict";
+
+var _ = _interopRequireDefault(require("../../img/icons/*.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var md5 = require('crypto-js/md5');
 
 var constants = require('../utils/consts');
@@ -54255,7 +54279,7 @@ function outputComic(data) {
   }
 
   code += '<p><b>Fecha de venta:</b> ' + data.dates[0].date + '</p>';
-  code += '<h2>Precios</h2>';
+  code += '<h2 class="with-icon"><img src="' + _.default.price + '" alt="Icono de precio" class="icon"><span>Precios</span></h2>';
   code += '<ul>';
   data.prices.forEach(function (price) {
     var priceName = '';
@@ -54272,7 +54296,7 @@ function outputComic(data) {
   code += '<p><b>Serie:</b>' + data.series.name + '</p>';
 
   if (data.creators.available > 0) {
-    code += '<h2>Autores</h2>';
+    code += '<h2 class="with-icon"><img src="' + _.default.author + '" alt="Icono de autores" class="icon"><span>Autores</h2>';
     code += '<ul>';
     data.creators.items.forEach(function (element) {
       code += '<li>' + element.name + ' (' + element.role + ').</li>';
@@ -54281,7 +54305,7 @@ function outputComic(data) {
   }
 
   if (data.characters.available > 0) {
-    code += '<h2>Personajes</h2>';
+    code += '<h2 class="with-icon"><img src="' + _.default.characters + '" alt="Icono de personajes" class="icon"><span>Personajes</h2>';
     code += '<ul>';
     data.characters.items.forEach(function (character) {
       code += '<li>' + character.name + '</li>';
@@ -54289,7 +54313,7 @@ function outputComic(data) {
     code += '</ul>';
   }
 
-  code += '<h2>Historias</h2>';
+  code += '<h2 class="with-icon"><img src="' + _.default.stories + '" alt="Icono de historias" class="icon"><span>Historias</h2>';
   code += '<ul>';
   data.stories.items.forEach(function (story) {
     code += '<li>' + story.name + '. Tipo: ' + story.type + '</li>';
@@ -54304,7 +54328,7 @@ function outputComics(data) {
   var item = document.createElement('div');
   item.setAttribute('class', 'comicItem col col-3');
   var code = '';
-  code += '<div class="r-box r-box-1_1"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del comic: ' + data.title + '"></div>';
+  code += '<div class="r-box r-box-1_1 clip-chat"><img src="' + data.thumbnail.path + '.' + data.thumbnail.extension + '" alt="Portada del comic: ' + data.title + '"></div>';
   code += '<h2>' + data.title + '</h2>';
 
   if (data.description !== null) {
@@ -54378,7 +54402,7 @@ module.exports = {
     });
   }
 };
-},{"crypto-js/md5":"../node_modules/crypto-js/md5.js","../utils/consts":"js/utils/consts.js"}],"js/comics/comic.js":[function(require,module,exports) {
+},{"../../img/icons/*.svg":"img/icons/*.svg","crypto-js/md5":"../node_modules/crypto-js/md5.js","../utils/consts":"js/utils/consts.js"}],"js/comics/comic.js":[function(require,module,exports) {
 var comicUtils = require('./comicUtils');
 
 var queryString = window.location.search;
@@ -54418,7 +54442,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39909" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43139" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

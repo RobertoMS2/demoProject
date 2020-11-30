@@ -1,0 +1,37 @@
+{
+	"lang" : "es",
+	"dir" : "ltr",
+	"name" : "Marvel wallet",
+	"description" : "El mundo del Marvel al alcance de sus teléfonos",
+	"short_name" : "MWallet",
+	"start_url" : "https://elegant-lovelace-02dfa3.netlify.app/index.html",
+	"display" : "fullscreen",
+	"orientation" : "landscape",
+	"theme_color" : "#202020",
+	"background_color" : "#fefefe",
+	"icons" : [
+	{
+		"src": "/img/app/favicon.ico",
+		"sizes": "16x16"
+	},
+	{
+		"src": "/img/app/favicon-32x32.png",
+		"sizes": "32x32"
+	},
+	{
+		"src": "/img/app/apple-touch-icon.png",
+		"sizes": "180x180"
+	},
+	{
+		"src": "/img/app/android-chrome-192x192.png",
+		"sizes": "192x192"
+	},
+	{
+		"src": "/img/app/android-chrome-256x256.png",
+		"sizes": "256x256"
+	},
+	{
+		"src": "/img/app/android-chrome-512x512.png",
+		"sizes": "512x512"
+	}]
+}
