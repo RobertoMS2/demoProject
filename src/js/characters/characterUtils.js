@@ -18,7 +18,7 @@ function outputCharacter(data) {
     code += '<div class="col col-8">';
     title_wrapper.innerHTML = '<h1 class="title"><span>' + data.name + '</span></h1>';
     if (data.comics.available > 0) {
-        code += '<h2>Comics</h2>';
+        code += '<h2 class="with-icon iconComics"><span>Comics</h2>';
         code += '<ul>';
         data.comics.items.forEach(comic => {
             const arr = comic.resourceURI.split('/');
@@ -28,7 +28,7 @@ function outputCharacter(data) {
         code += '</ul>';
     }
     if (data.series.available > 0) {
-        code += '<h2>Series</h2>';
+        code += '<h2 class="with-icon iconTags"><span>Series</h2>';
         code += '<ul>';
         data.series.items.forEach(serie => {
             const arr = serie.resourceURI.split('/');
@@ -38,7 +38,7 @@ function outputCharacter(data) {
         code += '</ul>';
     }
     if (data.stories.available > 0) {
-        code += '<h2>Historias</h2>';
+        code += '<h2 class="with-icon iconStories"><span>Historias</h2>';
         code += '<ul>';
         data.stories.items.forEach(story => {
             code += '<li>' + story.name + '. Tipo: ' + story.type + '</li>';

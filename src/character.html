@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="shortcut icon" href="../static/favicon.ico" />
-  <script src="https://kit.fontawesome.com/22bc6a1540.js" crossorigin="anonymous"></script>
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -21,10 +20,15 @@
       <h1><a href="/index.html" title="Página de inicio de Marvel Wallet"><span class="marvel">Marvel</span><span class="studios">wallet</span></a></h1>
     </div>
   </header>
-  <picture class="heading-img">
+  <picture class="heading-img" id="catHeader">
     <source media="(min-width:1920px)" srcset="./img/characters_big.webp">
     <source media="(min-width:1024px)" srcset="./img/characters_med.webp">
-      <img src="./img/characters_small.webp" alt="Fondo de miles morales">
+      <img src="./img/characters_small.webp" alt="Fondo de varios personajes de marvel con spiderman en el centro para la categoría personajes">
+  </picture>
+  <picture class="heading-img" id="detHeader">
+    <source media="(min-width:1920px)" srcset="./img/characters_detail_big.webp">
+    <source media="(min-width:1024px)" srcset="./img/characters_detail_med.webp">
+      <img src="./img/characters_detail_small.webp" alt="Fondo del capitán américa para el detella de un personaje">
   </picture>
   <div class="wrapper-contents">
     <div id="breadcrumbs">
@@ -36,8 +40,11 @@
     </div>
     <div id="title_wrapper"></div>
     <div id="wrapper" class="container">
-      <div class="loading">
-        <img src="./img/loading.gif" alt="Animación de cargando mientras se muestran los contenidos">
+      <div class="loading latir">
+        <svg class="" viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#EC1D24" width="100%" height="100%"></rect>
+          <path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+        </svg>
       </div>
     </div>
   </div>
