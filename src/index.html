@@ -45,7 +45,7 @@
       <picture class="heading-img">
         <source media="(min-width:1920px)" srcset="./img/comics_big.webp">
         <source media="(min-width:1024px)" srcset="./img/comics_med.webp">
-          <img src="./img/comics_small.webp" alt="Fondo de miles morales">
+          <img data-src="./img/comics_small.webp" alt="Fondo de miles morales" class="lazyload">
       </picture>
       <div class="wrapper-contents">
         <h2 class="title"><span>Últimos comics</span></h2>
@@ -66,7 +66,7 @@
       <picture class="heading-img">
         <source media="(min-width:1920px)" srcset="./img/characters_big.webp">
         <source media="(min-width:1024px)" srcset="./img/characters_med.webp">
-          <img src="./img/characters_small.webp" alt="Fondo de miles morales">
+          <img data-src="./img/characters_small.webp" alt="Fondo de miles morales" class="lazyload">
       </picture>
       <div class="wrapper-contents">
         <h2 class="title"><span>Personajes</span></h2>
@@ -86,7 +86,7 @@
       <picture class="heading-img">
         <source media="(min-width:1920px)" srcset="./img/series_big.webp">
         <source media="(min-width:1024px)" srcset="./img/series_med.webp">
-          <img src="./img/series_small.webp" alt="Fondo de miles morales">
+          <img data-src="./img/series_small.webp" alt="Fondo de miles morales" class="lazyload">
       </picture>
       <div class="wrapper-contents">
         <h2 class="title"><span>Series</span></h2>
@@ -134,5 +134,6 @@
   </footer>
   <script async src="./js/utils/scroll.js"></script>
   <script async src="./js/utils/sticky.js"></script>
+  <script async src="./js/utils/lazy.min.js"></script>
   <script async src="./js/index/index.js"></script>
 </html>
