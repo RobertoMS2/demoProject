@@ -23,12 +23,12 @@
   <picture class="heading-img" id="catHeader" style="display: none;">
     <source media="(min-width:1920px)" srcset="./img/comics_big.webp">
     <source media="(min-width:1024px)" srcset="./img/comics_med.webp">
-      <img src="./img/comics_small.webp" alt="Fondo de spiderman para la categoría comics">
+      <img data-src="./img/comics_small.webp" alt="Fondo de spiderman para la categoría comics" class="lazyload">
   </picture>
   <picture class="heading-img" id="detHeader" style="display: none;">
     <source media="(min-width:1920px)" srcset="./img/comics_detail_big.webp">
     <source media="(min-width:1024px)" srcset="./img/comics_detail_med.webp">
-      <img src="./img/comics_detail_small.webp" alt="Fondo de hulk para el detalle de un comic">
+      <img data-src="./img/comics_detail_small.webp" alt="Fondo de hulk para el detalle de un comic" class="lazyload">
   </picture>
   <div class="wrapper-contents">
     <div id="breadcrumbs">
@@ -78,5 +78,6 @@
     </section>
   </footer>
   <script async src="./js/utils/sticky.js"></script>
+  <script async src="./js/utils/lazy.min.js"></script>
   <script async src="./js/comics/comic.js"></script>
 </html>
