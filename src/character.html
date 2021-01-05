@@ -23,12 +23,12 @@
   <picture class="heading-img" id="catHeader" style="display: none;">
     <source media="(min-width:1920px)" srcset="./img/characters_big.webp">
     <source media="(min-width:1024px)" srcset="./img/characters_med.webp">
-      <img src="./img/characters_small.webp" alt="Fondo de varios personajes de marvel con spiderman en el centro para la categoría personajes">
+      <img data-src="./img/characters_small.webp" alt="Fondo de varios personajes de marvel con spiderman en el centro para la categoría personajes" class="lazyload">
   </picture>
   <picture class="heading-img" id="detHeader" style="display: none;">
     <source media="(min-width:1920px)" srcset="./img/characters_detail_big.webp">
     <source media="(min-width:1024px)" srcset="./img/characters_detail_med.webp">
-      <img src="./img/characters_detail_small.webp" alt="Fondo del capitán américa para el detella de un personaje">
+      <img data-src="./img/characters_detail_small.webp" alt="Fondo del capitán américa para el detella de un personaje" class="lazyload">
   </picture>
   <div class="wrapper-contents">
     <div id="breadcrumbs">
@@ -78,5 +78,6 @@
     </section>
   </footer>
   <script async src="./js/utils/sticky.js"></script>
+  <script async src="./js/utils/lazy.min.js"></script>
   <script async src="./js/characters/character.js"></script>
 </html>
