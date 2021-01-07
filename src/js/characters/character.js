@@ -6,7 +6,7 @@ const id = urlParams.get('id');
 
 if (id !== null && id !== '') {
     characterUtils.getCharacter(id);
-    const elto = document.querySelector('detHeader');
+    const elto = document.querySelector('#detHeader');
     elto.style.display = "block";
 } else {
     characterUtils.getCharacters();

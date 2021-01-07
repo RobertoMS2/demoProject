@@ -16,6 +16,7 @@
     "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-imagemin": "^4.0.2",
+    "parcel-plugin-lazy": "0.0.4",
     "parcel-plugin-robot": "^1.0.0",
     "postcss": "^8.1.1"
   },
